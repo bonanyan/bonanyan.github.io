@@ -1,10 +1,10 @@
 ---
 layout: page
-permalink: /teaching/
-title: 课程
+permalink: /material/
+title: 资料
 description: Materials for courses you taught. Replace this text with your description.
 nav: true
-nav_order: 4
+nav_order: 5
 ---
 
 <a href='#'>研究生课程</a>：

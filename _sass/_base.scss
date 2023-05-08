@@ -2,6 +2,7 @@
  * Styles for the base elements of the theme.
  ******************************************************************************/
 
+
 // Typography
 
 p,
@@ -17,6 +18,7 @@ li,
 span,
 strong {
   color: var(--global-text-color);
+  font-family: 'Noto Serif SC', serif;
 }
 
 hr {
