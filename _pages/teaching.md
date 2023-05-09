@@ -2,15 +2,19 @@
 layout: page
 permalink: /teaching/
 title: 课程
-description: Materials for courses you taught. Replace this text with your description.
+description: 日常开设交叉学科课程，介绍理论本身与它们是怎么来的，以启发新理论的诞生
 nav: true
 nav_order: 4
 ---
 
 <a href='#'>研究生课程</a>：
-- 人工智能芯片：设计与实践
+- 人工智能芯片：设计与实践 [秋季学期]
+- 嵌入式系统编程与实践 [秋季学期]
 
 <a href='#'>本科生课程</a>：
 - 数字系统原理与实践（信班）
+  - [专业核心课，春季学期，本科二年级下]
 - 人工智能芯片设计导论
+  - [专业选修课，秋季学期，推荐本科三年级上]
 - 人工智能与芯片设计
+  - [专业选修课，秋季学期，推荐本科三年级上]
