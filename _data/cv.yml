@@ -1,68 +1,53 @@
-- title: 基本信息
+- title: Basic Information
   type: map
   contents:
-    - name: 姓名
-      value: 燕博南
-    - name: 出生日期
-      value: 1991年06月27日
-    - name: 语言
-      value: 汉语，英语
+    - name: Name
+      value: Bonan Yan
+    - name: Date of Birth
+      value: June 27th, 1991
+    - name: Languages
+      value: Mandarin, English
+    - name: Full CV
+      value: <a href="cf.pdf">CV.pdf</a>
 
-- title: 教育
+- title: Education
   type: time_table
   contents:
     - title: Ph.D.
       institution: Duke University, Durham, North Carolina, USA
       year: 2020
       description:
-        - 导师：Hai (Helen) Li, Yiran Chen
-        - 专业领域：Electrical and Computer Engineering
-        - 研究方向：基于非易失存储器的高效率类脑计算
-        - 博士论文：
+        - Advisors：Hai (Helen) Li, Yiran Chen
+        - Department：Department of Electrical and Computer Engineering
+        - Field：Electrical and Computer Engineering
+        - Dissertation：Highly Efficient Neuromorphic Computing Systems With Emerging Nonvolatile Memories
     - title: M.S.
       institution: University of Pittsburgh, Pittsburgh, Pennsylvania, USA
       year: 2017
       description:
-        - 导师：Hai (Helen) Li
-        - 专业领域：Electrical Engineering
-    - title: 工学学士
-      institution: 北京航空航天大学，北京，中国
+        - Advisors：Hai (Helen) Li, Yiran Chen
+        - Department：Electrical and Computer Engineering
+        - Field：Electrical Engineering
+    - title: B. En.
+      institution: Beihang University, Beijing, China
       year: 2014
       description:
-        - 导师：赵巍胜，张有光
-        - 专业领域：电子信息工程（2系）
+        - Advisors：Weisheng Zhao, Youguang Zhang
+        - School：School of Electrical and Information Engineering(2系)
 
-- title: 工作经历
+- title: Work
   type: time_table
   contents:
-    - title: 助理教授
-      institution: 人工智能研究院，北京大学
-      year: 2020.11 - 今
-      description: 北京，中国
+    - title: Assistant Professor
+      institution: Institute for Artificial Intelligence, Peking University
+      year: 2020.11 - Now
+      description: Beijing, China
     - title: Chief Scientist
       institution: NeoNexus Group
       year: 2020.3 - 2020.11
-      description: 北京，中国
+      description: AI chip R&D
 
     - title: HP Labs
       institution: Visiting Scholar
       year: 2015.5-2015.8
       description: Palo Alto, CA, USA
-
-# - title: Open Source Projects
-#   type: time_table
-#   contents:
-#     - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-#       year: 2015-now
-#       description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
-# - title: Honors and Awards
-#   type: time_table
-#   contents:
-#     - year: 1921
-#       items: 
-#         - Nobel Prize in Physics 
-#         - Matteucci Medal
-#     - year: 2029
-#       items: 
-#         - Max Planck Medal

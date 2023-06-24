@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /recruit/
-title: 招生
+title: Recruit
 description: 各年级的同学请分别注意！
 nav: true
 nav_order: 3

@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /teaching/
-title: 课程
+title: Teaching
 description: 日常开设交叉学科课程，介绍理论本身与它们是怎么来的，以启发新理论的诞生
 nav: true
 nav_order: 4

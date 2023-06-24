@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /material/
-title: 资料
+title: Info
 description: 需要学习的各种经验和来自过来人的箴言
 nav: true
 nav_order: 5
