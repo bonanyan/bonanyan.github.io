@@ -2,23 +2,25 @@
 layout: page
 permalink: /recruit/
 title: Recruit
-description: 各年级的同学请分别注意！
-nav: true
-nav_order: 3
+description: This page collects all recruiting information
+nav: false
+nav_order: 1
 ---
 
+### 套瓷指南
 <a href='#'>本科生，一年级或以下</a>：
+
 请认真上课。
 
 <a href='#'>本科生，二年级</a>：
-想体验research的二年级同学可以联系我，最好在大二下（春季学期）五一假之前，可以立项本研训练项目
+想体验research的二年级同学，建议在大二下（春季学期）五一假之前联系我，可以立项“本研训练项目”
 
 <a href='#'>本科生，三年级</a>：
-欢迎想保研的同学来陶瓷，陶瓷信发这里 bonanyan at pku dot edu dot cn，告诉我你有多强+想研究的方向
+欢迎想保研的同学来陶瓷，陶瓷信发这里bonanyan[at]pku[dot]edu[dot]cn，告诉我你有多强+想研究的方向
 
 据往年经验竞争会比较激烈，请务必在三年级尽早联系，越早越好。我的考核方式是会分配一个小的project一起研究一下，这个过程来双向选择一下
 
-我这里的招生标准：
+招生标准：
 - <a href='#'>有兴趣</a>：花大量时间在研究（学习、适应、思考、动手）上
 - <a href='#'>有进展</a>：以隔周为单位，有显著进展；肯下手一点一点实现，而不是只想不做
 - <a href='#'>有回应</a>：遇到极小困难自己google，遇到小到中等困难自己解决，遇到重大困难第一时间跟我说一起寻求解决方案；我平常杂事比较多，需要每周催我排时间和你一对一meet
@@ -28,4 +30,20 @@ nav_order: 3
 本科四年级是工作或者读研第0年，一定要珍惜可以加油的机会！去跟着未来老板或导师学习吧
 
 <a href='#'>硕士研究生同学</a>：
-<a href='#'>在导师明确同意的情况下</a>，欢迎研究生同学来找我一起research，邮件我你的情况bonanyan at pku dot edu dot cn。
+<a href='#'>在导师明确同意的情况下</a>，欢迎研究生同学来找我一起research，邮件我你的情况bonanyan[at]pku[dot]edu[dot]cn。
+
+### 怎么确定我喜欢您的研究兴趣？
+- 我的研究的重要性总体逻辑：
+  - Memory-Centric Architecture
+- 先读一下这两篇文章，看看是不是喜欢：
+  - ddd
+  - ddd
+- 再看一下我这里的两个demo，看看是不是有自己想做一套的冲动：
+  - ddd
+  - ddd
+
+### On-Going Projects
+- Cognitive Architecture Processor
+- Massive Multi-Agent Simulation Processor
+- RRAM Compute-In-Memory Design
+- Digital SRAM Compute-In-Memory Design

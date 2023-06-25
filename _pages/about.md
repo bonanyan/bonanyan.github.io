@@ -4,36 +4,44 @@ permalink: /
 title: BONAN YAN
 description: Assistant Professor, Institute for Artificial Intelligence, Peking University
 logo: bn.png
-news: true
 ---
 
 ***
 
 <!-- <a href='#'>研究方向</a>：面向通用人工智能的芯片设计 -->
-### Research Interests
-- Integrated Circuits Design for Processing-In-Memory
-- Emerging Memories (especially RRAM)
 
-<a href='#'>研究主题</a>：
-- 研发新型集成电路技术，基于此完成全新智能处理器的设计
-- 试图回答的终极问题：强人工智能的计算硬件是什么样子的？
+### RESEARCH INTERESTS
+- Processing-In-Memory Circuits and Systems
+- Machine Learning Acceleration
+- Artificial General Intelligent (AGI) Processors
 
-<a href='#'>研究方向</a>：
-- 认知架构芯片
-- 超多智能体博弈芯片
-- 通用伊辛机芯片
-- 数字型SRAM存内计算芯片
+### APPOINTMENTS AND AFFILIATIONS
+- Assistant Professor in Institute for Artificial Intelligence
+- Assistant Professor in School of Integrated Circuits
 
-<a href='#'>招生</a>：
-常年招本科生、研究生，有兴趣的同学戳[这里](/al-folio/recruit)
+### AWARDS, HONORS, AND DISTINCTIONS
+- 国家高层次人才特殊支持计划，2024
+- NSFC后摩尔重大研究计划项目[培育项目]，2024
+- NSFC原创探索计划项目，2024
+- NSFC后摩尔重大研究计划项目[重点项目]，2023
+- CCF-华为胡杨林存储领域专项-优秀方案奖，2022
+- 苹芯科技合作项目，2021
+
+### CONTACT INFORMATION
+- 350 Micro/Nanoelectronics Building, No.5 Yiheyuan Road, Haidian District, Beijing 100871, China
+- Email: bonanyan[at]pku[dot]edu[dot]cn
+- Tel: 010-62573386
+
+### GROUP MEMBER RECRUITMENT
+Research Positions are [OPEN](/recruit).
 
 
-<a href='#'>课程</a>：
-- 研究生
+### COURSE
+- Graduate
   - 人工智能芯片：设计与实践
   - 嵌入式系统编程与实践
-- 本科生
+- Undergraduate
   - 数字系统原理与实践（信班）
   - 人工智能芯片设计导论
-  - 人工智能与芯片设计
+  - 人工智能与集成电路
 
