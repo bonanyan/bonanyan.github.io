@@ -17,6 +17,7 @@ div,
 li,
 span,
 strong {
+  font-size: 0.9rem;
   color: var(--global-text-color);
   font-family: 'Nunito Sans', sans-serif;
 }
@@ -25,7 +26,12 @@ strong {
 //   color: #BC132C;
 // }
 h3 {
+  font-size: 1rem;
   font-weight: bold;
+  color: #BC132C;
+}
+
+b {
   color: #BC132C;
 }
 
@@ -157,7 +163,7 @@ blockquote {
 
 .post-description {
   margin-bottom: 2rem;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
 
   a {
     color: inherit;
@@ -427,6 +433,7 @@ footer.sticky-bottom {
   mjx-container[jax="CHTML"][display="true"] {
     display: unset;
   }
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
