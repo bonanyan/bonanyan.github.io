@@ -1,11 +1,13 @@
 ---
 layout: page
 permalink: /recruit/
-title: Recruit
+title: 欢迎加入！
 description: This page collects all recruiting information
 nav: false
 nav_order: 1
 ---
+
+[状态(持续更新)] 2024年入学博士研究生招生名额*已满*
 
 ### 套瓷指南
 <a href='#'>本科生，一年级或以下</a>：

@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /info/
-title: Info
+title: Advice
 description: 需要学习的各种经验和来自过来人的箴言
 nav: true
 nav_order: 6
@@ -14,11 +14,6 @@ children:
     - title: Projects
       permalink: /projects/
 ---
-
-#### 我的项目
-
-- 开源存内计算Verilog HDL与Chisel HGL行为模型库
-  - [https://bonany.gitlab.io/pis/](https://bonany.gitlab.io/pis/)
 
 
 #### 关于PhD训练
