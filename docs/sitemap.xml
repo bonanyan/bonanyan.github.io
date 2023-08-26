@@ -16,6 +16,9 @@
 <loc>http://localhost:4000/info/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/phdguide/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/publications/</loc>
 </url>
 <url>
