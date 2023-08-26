@@ -7,8 +7,6 @@
       value: June 27th, 1991
     - name: Languages
       value: Mandarin, English
-    - name: Full CV
-      value: <a href="cf.pdf">CV.pdf</a>
 
 - title: Education
   type: time_table
