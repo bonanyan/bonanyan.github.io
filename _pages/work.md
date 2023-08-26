@@ -9,14 +9,17 @@ nav_order: 3
 
 ### Toolkits
 
-- 开源存内计算Verilog HDL与Chisel HGL行为模型库
+- *PISLB*: open-source Verilog/Chisel behavioral model library
   - [https://bonany.gitlab.io/pis/](https://bonany.gitlab.io/pis/)
 
+- *Pyjuice*: prbabilistic circuits【collaboration with UCLA】
+  - [https://github.com/Juice-jl/pyjuice](https://github.com/Juice-jl/pyjuice)
+
+
 ### Chip Gallery
-*Chip1*
 
-XXX
+SRAM & RRAM Compute-In-Memory Chips Made by Our Research Group (2020~now)
 
-*Chip2*
+![Our Chips](/assets/img/chips.png){:width="60%"}
 
-XXX
+

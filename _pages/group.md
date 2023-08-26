@@ -7,26 +7,43 @@ nav: true
 nav_order: 3
 ---
 
-### Group Member
+### Research Group @ PKU
 
 *PhD Students*
 - **Wenshuo Yue**
   - Ph.D. career starts in 2021
   - Research interests: memristor-based compute-in-memory for graph processing
+
 - **Anjunyi Fan**
   - Ph.D. career starts in 2022
   - Research interests: SRAM compute-in-memory microarchitecture
+
 - **Daijing Shi**
   - Ph.D. career starts in 2022
   - Research interests: RRAM compute-in-memory IC design
-- **Yifan Fu**
-  - Ph.D. career starts in 2023
-  - Research interests: probabilistic computing IC Design
+
 - **Hongxiao Zhao**
   - Ph.D. career starts in 2023
   - Research interests: cognitive architecture processor
 
+- **Yifan Fu**
+  - Ph.D. career starts in 2023
+  - Research interests: probabilistic computing IC Design
+
+- **Qiuping Wu**
+  - Ph.D. career starts in 2024
+  - Research interests: not decided
+
+- **Juchen Zhou**
+  - Ph.D. career starts in 2024
+  - Research interests: not decided
+
 *M.S. Students*
+
+- **Jing Wang**
+- M.S. career starts in 2021
+- Research interests: intelligent biological signal processing
+
 - **Zhiyu Yang**
 - M.S. career starts in 2021
 - Research interests: intelligent biological signal processing
@@ -34,3 +51,7 @@ nav_order: 3
 - **Jiayi Li**
 - M.S. career starts in 2022
 - Research interests: reinforcement learning processor
+
+
+*Alumni*
+- **Kangyi Qiu**: Georgia Tech CS MS program

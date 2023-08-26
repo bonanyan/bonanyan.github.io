@@ -24,7 +24,8 @@ logo: bn.png
 - Email: bonanyan[at]pku[dot]edu[dot]cn
 - [Bilibili主页](https://space.bilibili.com/400781891)
 
-### Courses
+---
+### COURSES
 - 研究生
   - 人工智能芯片：设计与实践(23'fall)
   - 嵌入式系统编程与实践(23'fall)
@@ -33,10 +34,11 @@ logo: bn.png
   - 人工智能芯片设计导论(23'fall)
   - 数字系统原理与实践（信班）(24'spring)
 
-### Join Our Research Group?
+### JOIN OUR GROUP?
 Check [HERE](/recruit)
 
-### Funding
+---
+### FUNDING
 - NSFC原创探索计划项目，2024
 - NSFC后摩尔重大研究计划项目[重点项目]，2023
 - CCF-华为胡杨林存储领域专项，2022
