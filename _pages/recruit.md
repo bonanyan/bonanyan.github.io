@@ -4,7 +4,7 @@ permalink: /recruit/
 title: 欢迎加入！
 description: This page collects all recruiting information
 nav: false
-nav_order: 1
+nav_order: 2
 ---
 
 [状态(持续更新)] 2024年入学博士研究生招生名额*已满*

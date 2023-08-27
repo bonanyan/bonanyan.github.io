@@ -4,7 +4,7 @@ permalink: /phdguide/
 title: PhD Career Guide
 description: This page collects all recruiting information
 nav: false
-nav_order: 2
+nav_order: 3
 ---
 
 

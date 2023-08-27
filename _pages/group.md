@@ -4,7 +4,7 @@ permalink: /group/
 title: Group
 description: We develop novel AI chips :)
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 ### Research Group @ PKU
