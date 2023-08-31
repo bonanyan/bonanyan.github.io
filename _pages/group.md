@@ -40,11 +40,11 @@ nav_order: 4
 
 *M.S. Students*
 
-- **Jing Wang**
+- **Zhiyu Yang**
 - M.S. career starts in 2021
 - Research interests: intelligent biological signal processing
 
-- **Zhiyu Yang**
+- **Jing Wang**
 - M.S. career starts in 2021
 - Research interests: intelligent biological signal processing
 
@@ -52,6 +52,8 @@ nav_order: 4
 - M.S. career starts in 2022
 - Research interests: reinforcement learning processor
 
+*Undergraduate Students*
+- keep secret
 
 *Alumni*
 - **Kangyi Qiu**: Georgia Tech CS MS program

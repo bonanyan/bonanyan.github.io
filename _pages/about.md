@@ -27,12 +27,12 @@ logo: bn.png
 ---
 ### COURSES
 - 研究生
-  - 人工智能芯片：设计与实践(23'fall)
-  - 嵌入式系统编程与实践(23'fall)
+  - 人工智能芯片：设计与实践 ([23'fall](/adap23fall/))
+  - 嵌入式系统编程与实践 ([23'fall](/esp23fall/))
 - 本科生
-  - 人工智能与集成电路（通班）(23'fall)
-  - 人工智能芯片设计导论(23'fall)
-  - 数字系统原理与实践（信班）(24'spring)
+  - 人工智能与集成电路\[通班\]([23'fall](/aiic23fall/))
+  - 人工智能芯片设计导论 ([23'fall](/aichip23fall/))
+  - 数字系统原理与实践\[信班\]([24'spring](/digital24spring/))
 
 ### JOIN OUR GROUP?
 Check [HERE](/recruit)
