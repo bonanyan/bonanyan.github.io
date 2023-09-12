@@ -8,41 +8,41 @@ nav: false
 
 ### 课程信息
 
-- Lecture Location:	昌平新校区-教学楼114
-- Lecture time:	9:00am-12:00pm, Wed
+- Lecture Location:	燕园校区-三教406
+- Lecture time:	8:00am-9:50pm, Mon & Tue
 - Instructor:	Dr. Bonan Yan 燕博南
-- TA: 史代璟（daijingshi at pku.edu.cn）
 - Email:	bonanyan AT pku.edu.cn
 - Office Hours:	After class or by appointment (feel free to email me)
 
 ### 教学计划
 
-| Week | Date       | Lecture Topic                                             | Reference                                                 | Assignment Due             |
-|------|------------|-----------------------------------------------------------|-----------------------------------------------------------|----------------------------|
-| 1    | Mon, 9/11   | Class Introduction, slides                               | 📕 §1                                                     |                            |
-| 1    | Tue, 9/12  | Advanced HDL basics & Timing                              | 💻 , Shanon Thesis , LogicEfforts                         |                            |
-| 2    | Mon, 9/18  | Logic Synthesis - I                                       |                                                           | assignment 1 [already due] |
-| 3    | Mon, 9/25  | Happy Holiday! No lecture 😃                              |                                                           |                           |
-| 3    | Tue, 9/26  | Logic Synthesis - II                                     |                                                           |                            |
-| 4    | Mon, 10/2  | Logic Synthesis In-Class Lab                             | Srv_Tutorial                                              |                            |
-| 5    | Mon, 10/9 |  Memory Technologies                                      |  EDVAC_Manual, SP_SRAM_Behavioral.v, DP_SRAM_Behavioral.v |                            |
-| 5    | Tue, 10/10 | Data Formats & Circuits                                    |                                                           |                            |
-| 6    | Mon, 10/8 |   CPU Architecture - I                                     |                                                           | assignment 2 [already due] |
-| 7    | Wed, 11/15  |   CPU Architecture - II                                 |   Dark RSIC-V                                             | Minimalist_CPU_Code_v1     |
-| 7   | Wed, 11/22  |   Instrumentalism Intro of DNN - I                       |                                                           | PIM_Behavioral_Model       |
-| 8   | Wed, 11/29 |   Instrumentalism Intro of DNN - II                       |                                                           |                            |
-| 9   | Wed, 12/6 |   Progress Report - I                                      |                                                           | Good Job Everyone!!        |
-| 9   | Wed, 12/13 |   Systolic Array                                          | why systolic, TPU arch                                    |                            |
-| 10   | Wed, 12/20 |   Lastest Hardware Programming Languages                  |  see inside the slides                                    |                            |
-| 11   | Wed, 12/27 |  Final Presentation - Progress Report II                  |                                                           |                            |
-| 11   | Wed, 1/3 | [Final Exam Week] No Lecture                                | Minimalist_CPU_Code_v2 Change Mem.v (Recommended)         |                            |
-| 12   | Sat, 1/10 | Final Report+Code Submission                               | Minimalist_CPU_Code_v3 Change Code.v                      | ProjectGuide, due         |
-| 13   | Sat, 1/10 | Final Report+Code Submission                               | Minimalist_CPU_Code_v3 Change Code.v                      | ProjectGuide, due         |
-| 13   | Sat, 1/10 | Final Report+Code Submission                               | Minimalist_CPU_Code_v3 Change Code.v                      | ProjectGuide, due         |
-| 14   | Sat, 1/10 | Final Report+Code Submission                               | Minimalist_CPU_Code_v3 Change Code.v                      | ProjectGuide, due         |
-| 15   | Sat, 1/10 | Final Report+Code Submission                               | Minimalist_CPU_Code_v3 Change Code.v                      | ProjectGuide, due         |
-| 15   | Sat, 1/10 | Final Report+Code Submission                               | Minimalist_CPU_Code_v3 Change Code.v                      | ProjectGuide, due         |
-| 16   | Sat, 1/10 | Final Report+Code Submission                               | Minimalist_CPU_Code_v3 Change Code.v                      | ProjectGuide, due         |
+| No. | Week | Date       | Topic                           | Reference | Due |
+| --- | ---- | ---------- | ------------------------------- | --------- | --- |
+| 1   | 1    | Mon, 9/11  | Introduction                    | handouts  |     |
+| 2   | 1    | Tue, 9/12  | Introduction(cont.)             |           |     |
+| 3   | 2    | Mon, 9/18  | Verilog                         | handouts  |     |
+| 4   | 3    | Mon, 9/25  | Verilog (cont.)                 |           |     |
+| 5   | 3    | Tue, 9/26  | Project Define, Algorithm       |           |     |
+| X   | 4    | Mon, 10/2  | Happy holiday, no lecture 😃    |           |     |
+| 6   | 5    | Mon, 10/9  | Algorithm (cont.)               |           |     |
+| 7   | 5    | Tue, 10/10 | Memory Technologies             |           |     |
+| 8   | 6    | Mon, 10/16 | Memory Technologies (cont.)     |           |     |
+| 9   | 7    | Mon, 10/23 | Data Formats & Circuits         |           |     |
+| 10  | 7    | Tue, 10/24 | Data Formats & Circuits (cont.) |           |     |
+| 11  | 8    | Mon, 10/30 | Progress report I               |           |     |
+| 12  | 9    | Mon, 11/6  | Progress report II              |           |     |
+| 13  | 9    | Tue, 11/7  | Progress report III             |           |     |
+| 14  | 10   | Mon, 11/13 | Progress report IV              |           |     |
+| 15  | 11   | Mon, 11/20 | Paper Writing                   |           |     |
+| 16  | 11   | Tue, 11/21 |                                 |           |     |
+| 17  | 12   | Mon, 11/27 |                                 |           |     |
+| 18  | 13   | Mon, 12/4  |                                 |           |     |
+| 19  | 13   | Tue, 12/5  |                                 |           |     |
+| 20  | 14   | Mon, 12/11 |                                 |           |     |
+| 21  | 15   | Mon, 12/18 |                                 |           |     |
+| 22  | 15   | Tue, 12/19 |                                 |           |     |
+| 23  | 16   | Mon, 12/15 | Final Presentation              |           |     |
+	
 
 
 ### 课程资源
@@ -50,3 +50,7 @@ nav: false
 - Wavedrom: waveform drawing tool
 - iVerilog: verilog compilers/simulator
 - GTKWave: waveform viewer
+
+### 课程目标
+
+完成Transformor Modular Design Project
