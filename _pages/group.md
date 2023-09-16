@@ -22,6 +22,10 @@ nav_order: 4
   - Ph.D. career starts in 2022
   - Research interests: RRAM compute-in-memory IC design
 
+- **Yihang Zhu**
+  - Ph.D. career starts in 2022
+  - Research interests: Programmability & microarchitecture for compute-in-memory
+
 - **Hongxiao Zhao**
   - Ph.D. career starts in 2023
   - Research interests: cognitive architecture processor
