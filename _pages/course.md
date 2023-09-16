@@ -12,7 +12,7 @@ children:
       permalink: /adap23fall/
     - title: divider
     - title: 嵌入式系统编程与实践(23'秋)
-      permalink: /esp23fall/
+      permalink: /esp2023/
     - title: divider
     - title: 人工智能与集成电路[通班](23'秋)
       permalink: /aiic23fall/
