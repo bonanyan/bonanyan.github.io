@@ -24,7 +24,7 @@ nav_order: 4
 
 - **Yihang Zhu**
   - Ph.D. career starts in 2022
-  - Research interests: Programmability & microarchitecture for compute-in-memory
+  - Research interests: programmability & microarchitecture for compute-in-memory
 
 - **Hongxiao Zhao**
   - Ph.D. career starts in 2023
@@ -50,7 +50,11 @@ nav_order: 4
 
 - **Jing Wang**
 - M.S. career starts in 2021
-- Research interests: intelligent biological signal processing
+- Research interests: compute-in-memory IC design
+
+- **Qaun Zhang**
+- M.S. career starts in 2021
+- Research interests: compute-in-memory IC design
 
 - **Jiayi Li**
 - M.S. career starts in 2022
