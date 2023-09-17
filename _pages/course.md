@@ -15,10 +15,10 @@ children:
       permalink: /esp2023/
     - title: divider
     - title: 人工智能与集成电路[通班](23'秋)
-      permalink: /aiic2023/
+      permalink: /aichip2023/
     - title: divider
     - title: 人工智能芯片设计导论(23'秋)
-      permalink: /aichip2023/
+      permalink: /aiic2023/
     - title: divider
     - title: 数字系统原理与实践[信班](24'春)
       permalink: /digital24spring/
