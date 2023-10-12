@@ -30,7 +30,7 @@ nav_order: 4
   - Ph.D. career starts in 2023
   - Research interests: cognitive architecture processor
 
-- **Yifan Fu**
+- **Yihan Fu**
   - Ph.D. career starts in 2023
   - Research interests: probabilistic computing IC Design
 
