@@ -9,7 +9,13 @@ nav_order: 5
 
 ### Toolkits
 
-- *PISLB*: open-source Verilog/Chisel behavioral model library
+- *PIM-Gym*: PIM macro Verilog/Chisel behavioral models & examples of integrating PIM into SoC
+  - [https://bonany.cc/pim-gym/](https://bonany.cc/pim-gym/)
+
+- *AttentionLego*: vanilla self-attention block for large language model accelerators
+  - [https://bonany.cc/attentionlego/](https://bonany.cc/attentionlego/)
+
+- *PISLB*: open-source PIM macro Verilog/Chisel behavioral model library
   - [https://bonany.gitlab.io/pis/](https://bonany.gitlab.io/pis/)
 
 - *Pyjuice*: prbabilistic circuits【collaboration with UCLA】
