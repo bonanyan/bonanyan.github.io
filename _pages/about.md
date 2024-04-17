@@ -20,26 +20,27 @@ logo: bn.png
   - Massive Multi-Agents Reinforcement Learning
 
 ### CONTACT INFORMATION
-- 350 Micro/Nano-Electronic Building, Peking University, Beijing, China, 100871
+- 2213B Resource West Building, Peking University, Beijing, China, 100871
 - Email: bonanyan[at]pku[dot]edu[dot]cn
 - [Bilibili主页](https://space.bilibili.com/400781891)
 
 ---
 ### COURSES
+- 本科生
+  - 数字系统原理与实践\[信班\]([24'spring](/digital_logic_lab/))
+  - 人工智能与集成电路\[通班\]([23'fall](/aichip2023/))
+  - 人工智能芯片设计导论 ([23'fall](/aiic2023/))
 - 研究生
   - 人工智能芯片：设计与实践 ([23'fall](/adap2023/))
   - 嵌入式系统编程与实践 ([23'fall](/esp2023/))
-- 本科生
-  - 人工智能与集成电路\[通班\]([23'fall](/aichip2023/))
-  - 人工智能芯片设计导论 ([23'fall](/aiic2023/))
-  - 数字系统原理与实践\[信班\]([24'spring](/digital24spring/))
+
 
 ### JOIN OUR GROUP?
 Check [HERE](/recruit)
 
 ---
 ### FUNDING
-- NSFC原创探索计划项目，2024
-- NSFC后摩尔重大研究计划项目[重点项目]，2023
-- CCF-华为胡杨林存储领域专项，2022
-- 苹芯科技合作项目，2021
+- NSFC原创探索计划项目
+- NSFC后摩尔重大研究计划项目[重点项目]
+- CCF-华为胡杨林存储领域专项
+- 苹芯科技合作项目

@@ -8,6 +8,9 @@ nav_order: 3
 dropdown: true
 parent: root
 children: 
+    - title: 数字系统原理与实践[信班](24'春)
+      permalink: /digital_logic_lab/
+    - title: divider
     - title: 人工智能芯片：设计与实践(23'秋)
       permalink: /adap2023/
     - title: divider
@@ -19,9 +22,6 @@ children:
     - title: divider
     - title: 人工智能芯片设计导论(23'秋)
       permalink: /aiic2023/
-    - title: divider
-    - title: 数字系统原理与实践[信班](24'春)
-      permalink: /digital24spring/
 ---
 
 ### 研究生课程
