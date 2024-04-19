@@ -4,6 +4,8 @@ default:
 
 build:
 	rm -rf docs
+	mkdir docs
+	echo bonany.cc > docs/CNAME
 	jekyll build --destination docs	
 
 push:

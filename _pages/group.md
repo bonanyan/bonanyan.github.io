@@ -52,7 +52,7 @@ nav_order: 4
 - M.S. career starts in 2021
 - Research interests: compute-in-memory IC design
 
-- **Qaun Zhang**
+- **Quan Zhang**
 - M.S. career starts in 2021
 - Research interests: compute-in-memory IC design
 
