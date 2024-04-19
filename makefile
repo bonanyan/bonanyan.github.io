@@ -1,7 +1,10 @@
 default:
-	rm -rf docs
 	bundle install
 	bundle exec jekyll serve --lsi
+
+build:
+	rm -rf docs
+	jekyll build --destination docs	
 
 push:
 	git add .
