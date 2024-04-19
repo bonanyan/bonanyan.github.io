@@ -1,4 +1,5 @@
 default:
+	rm -rf docs
 	bundle install
 	bundle exec jekyll serve --lsi
 
