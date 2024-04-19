@@ -9,7 +9,7 @@ logo: bn.png
 ***
 
 ### RESEARCH FIELD
-- Integrated Circuit Design for Artificial General Intelligence
+- Integrated Circuits Design for Artificial General Intelligence
 
 ### RESEARCH INTERESTS
 - Processing-In-Memory Circuits and Systems
