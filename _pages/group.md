@@ -42,26 +42,10 @@ nav_order: 4
   - Ph.D. career starts in 2024
   - Research interests: not decided
 
-*M.S. Students*
-
-- **Zhiyu Yang**
-- M.S. career starts in 2021
-- Research interests: intelligent biological signal processing
-
-- **Jing Wang**
-- M.S. career starts in 2021
-- Research interests: compute-in-memory IC design
-
-- **Quan Zhang**
-- M.S. career starts in 2021
-- Research interests: compute-in-memory IC design
-
 - **Jiayi Li**
-- M.S. career starts in 2022
-- Research interests: reinforcement learning processor
+  - Ph.D. career starts in 2024
+  - Research interests: reinforcement learning processor
 
-*Undergraduate Students*
-- keep secret
-
-*Alumni*
-- **Kangyi Qiu**: Georgia Tech CS MS program
+- **Jiaqi Yang**
+  - Ph.D. career starts in 2025
+  - Research interests: not decided
