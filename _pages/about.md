@@ -34,8 +34,8 @@ logo: bn.png
   - 人工智能芯片：设计与实践 ([23'fall](/adap2023/))
   - 嵌入式系统编程与实践 ([23'fall](/esp2023/))
 
-
-### JOIN OUR GROUP?
+---
+### WANNA JOIN US?
 Check [HERE](/recruit)
 
 ---
@@ -47,6 +47,6 @@ Check [HERE](/recruit)
 - 北京大学本科教学改革项目
 
 ---
-### Editor Service
+### ACADEMIC SERVICE
 - 《集成电路与嵌入式系统》青年编委
 - 《CHIP》青年编委
