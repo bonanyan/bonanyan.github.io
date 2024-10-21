@@ -36,14 +36,14 @@ nav_order: 4
 
 - **Qiuping Wu**
   - Ph.D. career starts in 2024
-  - Research interests: not decided
+  - Research interests: WASM processor
 
 - **Juchen Zhou**
   - Ph.D. career starts in 2024
   - Research interests: not decided
 
 - **Jiayi Li**
-  - Ph.D. career starts in 2024
+  - Ph.D. career starts in 2025
   - Research interests: reinforcement learning processor
 
 - **Jiaqi Yang**
