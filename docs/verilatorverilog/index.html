@@ -14,7 +14,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>blog | B. Y.</title>
+    <title>How to use Verilator to simulate Verilog code | B. Y.</title>
     <meta name="author" content="Bonan  Yan">
     <meta name="description" content="Bonan Yan's Personal Site
 ">
@@ -42,7 +42,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://bonanyan.github.io/blog/">
+    <link rel="canonical" href="http://bonanyan.github.io/verilatorverilog/">
 
     <!-- Dark Mode -->
     
@@ -74,6 +74,7 @@
                   <!--  -->
                   
                 
+              
               
               
               
@@ -149,22 +150,115 @@
     <!-- Content -->
     <div class="container mt-5">
       
+        <!-- page.html -->
         <div class="post">
 
-  
-  
+          <header class="post-header">
+            <h1 class="post-title">How to use Verilator to simulate Verilog code</h1>
+            <p class="post-description"></p>
+          </header>
 
-  
+          <article>
+            <ol>
+  <li>Prepare Source Code</li>
+</ol>
 
-  
+<p>cnt_ceil.v:</p>
+<div class="language-verilog highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">`timescale</span> <span class="mi">1</span><span class="n">ns</span> <span class="o">/</span> <span class="mi">1</span><span class="n">ns</span>
+<span class="k">module</span> <span class="n">counter</span> <span class="p">(</span>
+    <span class="kt">input</span> <span class="kt">wire</span> <span class="n">clk</span><span class="p">,</span>
+    <span class="kt">input</span> <span class="kt">wire</span> <span class="n">rst</span><span class="p">,</span>
+    <span class="kt">output</span> <span class="kt">reg</span> <span class="p">[</span><span class="mi">3</span><span class="o">:</span><span class="mi">0</span><span class="p">]</span> <span class="n">cnt</span>
+<span class="p">);</span>
+    <span class="k">always</span> <span class="o">@</span><span class="p">(</span><span class="kt">posedge</span> <span class="n">clk</span> <span class="kt">or</span> <span class="kt">posedge</span> <span class="n">rst</span><span class="p">)</span> <span class="k">begin</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">rst</span><span class="p">)</span> <span class="k">begin</span>
+            <span class="n">cnt</span> <span class="o">&lt;=</span> <span class="mb">4'b0</span><span class="p">;</span>
+        <span class="k">end</span> <span class="k">else</span> <span class="k">begin</span>
+            <span class="n">cnt</span> <span class="o">&lt;=</span> <span class="n">cnt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+<span class="k">endmodule</span>
+</code></pre></div></div>
 
-  <ul class="post-list">
-    
-  </ul>
+<p>cnt_ceil_tb.v</p>
+<div class="language-verilog highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">`timescale</span> <span class="mi">1</span><span class="n">ns</span> <span class="o">/</span> <span class="mi">1</span><span class="n">ns</span>
+<span class="k">module</span> <span class="n">counter_tb</span><span class="p">;</span>
+    <span class="c1">// input signals</span>
+    <span class="kt">reg</span>        <span class="n">clk</span><span class="p">;</span>
+    <span class="kt">reg</span>        <span class="n">rst</span><span class="p">;</span>
+    <span class="c1">//output signals</span>
+    <span class="kt">wire</span> <span class="p">[</span><span class="mi">3</span><span class="o">:</span><span class="mi">0</span><span class="p">]</span> <span class="n">cnt</span><span class="p">;</span>
+    <span class="c1">//instance</span>
+    <span class="n">counter</span> <span class="n">x0</span> <span class="p">(</span>
+        <span class="p">.</span><span class="n">clk</span><span class="p">(</span><span class="n">clk</span><span class="p">),</span>
+        <span class="p">.</span><span class="n">rst</span><span class="p">(</span><span class="n">rst</span><span class="p">),</span>
+        <span class="p">.</span><span class="n">cnt</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
+    <span class="p">);</span>
 
-  
+    <span class="c1">//inputs</span>
+    <span class="k">initial</span> <span class="k">begin</span>  <span class="c1">//clk</span>
+        <span class="k">forever</span> <span class="p">#</span><span class="mi">1</span> <span class="n">clk</span> <span class="o">=</span> <span class="o">~</span><span class="n">clk</span><span class="p">;</span>
+    <span class="k">end</span>
 
-</div>
+    <span class="k">initial</span> <span class="k">begin</span>
+        <span class="p">#</span><span class="mi">0</span> <span class="n">clk</span> <span class="o">=</span> <span class="mb">1'b0</span><span class="p">;</span>
+        <span class="n">rst</span> <span class="o">=</span> <span class="mb">1'b1</span><span class="p">;</span>
+        <span class="p">#</span><span class="mi">10</span> <span class="n">rst</span> <span class="o">=</span> <span class="mb">1'b0</span><span class="p">;</span>
+        <span class="p">#</span><span class="mi">110</span> <span class="p">$</span><span class="nb">finish</span><span class="p">;</span>
+    <span class="k">end</span>
+<span class="k">endmodule</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Prepare Verilator Wrapper</li>
+</ol>
+
+<p>sim_main.cpp</p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;verilated.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;verilated_vcd_c.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">"Vcounter_tb.h"</span><span class="c1"> // &lt;-- design changes here</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">){</span>
+<span class="c1">//构造环境对象，设计对象，波形对象</span>
+  <span class="n">VerilatedContext</span><span class="o">*</span> <span class="n">m_contextp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">VerilatedContext</span><span class="p">;</span><span class="c1">//环境</span>
+  <span class="n">VerilatedVcdC</span><span class="o">*</span>    <span class="n">m_tracep</span>   <span class="o">=</span> <span class="k">new</span> <span class="n">VerilatedVcdC</span><span class="p">;</span><span class="c1">//波形</span>
+  <span class="n">Vcounter_tb</span><span class="o">*</span>     <span class="n">m_duvp</span>     <span class="o">=</span> <span class="k">new</span> <span class="n">Vcounter_tb</span><span class="p">;</span><span class="c1">// &lt;-- design changes here</span>
+<span class="c1">//波形配置</span>
+  <span class="n">m_contextp</span><span class="o">-&gt;</span><span class="n">traceEverOn</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="c1">//环境里打开波形开关</span>
+  <span class="n">m_duvp</span><span class="o">-&gt;</span><span class="n">trace</span><span class="p">(</span><span class="n">m_tracep</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span><span class="c1">//深度为3</span>
+  <span class="n">m_tracep</span><span class="o">-&gt;</span><span class="n">open</span><span class="p">(</span><span class="s">"wave.vcd"</span><span class="p">);</span><span class="c1">//打开要存数据的vcd文件</span>
+<span class="c1">//写入数据到波形文件里</span>
+  <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">m_contextp</span><span class="o">-&gt;</span><span class="n">gotFinish</span><span class="p">()){</span>
+  <span class="c1">//刷新电路状态</span>
+    <span class="n">m_duvp</span><span class="o">-&gt;</span><span class="n">eval</span><span class="p">();</span>
+  <span class="c1">//dump数据</span>
+    <span class="n">m_tracep</span><span class="o">-&gt;</span><span class="n">dump</span><span class="p">(</span><span class="n">m_contextp</span><span class="o">-&gt;</span><span class="n">time</span><span class="p">());</span>
+  <span class="c1">//增加仿真时间</span>
+    <span class="n">m_contextp</span><span class="o">-&gt;</span><span class="n">timeInc</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="c1">//记得关闭trace对象以保存文件里的数据</span>
+  <span class="n">m_tracep</span><span class="o">-&gt;</span><span class="n">close</span><span class="p">();</span>
+<span class="c1">//释放内存</span>
+  <span class="k">delete</span> <span class="n">m_duvp</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>To Run Simulation</li>
+</ol>
+
+<p>run.sh</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>verilator <span class="nt">-cc</span> <span class="nt">-trace</span> <span class="nt">--timing</span> counter_tb.v <span class="nt">-exe</span> sim_main.cpp <span class="c"># &lt;-- design changes here</span>
+<span class="nb">cd</span> ./obj_dir
+make <span class="nt">-f</span> Vcounter_tb.mk <span class="c"># &lt;-- design changes here</span>
+./Vcounter_tb
+<span class="c"># gtkwave wave.vcd  # use gtkwave to open resultent waveform</span>
+</code></pre></div></div>
+
+          </article>
+
+        </div>
 
       
     </div>

@@ -28,4 +28,9 @@ SRAM & RRAM Compute-In-Memory Chips Made by Our Research Group (2020~now)
 
 ![Our Chips](/assets/img/chips.png){:width="60%"}
 
+### Notes
+
+- [How to use Verilator to simulate Verilog code](/verilatorverilog/)
+
+
 
