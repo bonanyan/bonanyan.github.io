@@ -159,9 +159,7 @@
           </header>
 
           <article>
-            <ol>
-  <li>Prepare Source Code</li>
-</ol>
+            <h3 id="a-prepare-source-code">(a) Prepare Source Code</h3>
 
 <p>cnt_ceil.v:</p>
 <div class="language-verilog highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">`timescale</span> <span class="mi">1</span><span class="n">ns</span> <span class="o">/</span> <span class="mi">1</span><span class="n">ns</span>
@@ -209,9 +207,7 @@
 <span class="k">endmodule</span>
 </code></pre></div></div>
 
-<ol>
-  <li>Prepare Verilator Wrapper</li>
-</ol>
+<h3 id="b-prepare-verilator-wrapper">(b) Prepare Verilator Wrapper</h3>
 
 <p>sim_main.cpp</p>
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;verilated.h&gt;</span><span class="cp">
@@ -244,9 +240,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<ol>
-  <li>To Run Simulation</li>
-</ol>
+<h3 id="c-to-run-simulation">(c) To Run Simulation</h3>
 
 <p>run.sh</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>verilator <span class="nt">-cc</span> <span class="nt">-trace</span> <span class="nt">--timing</span> counter_tb.v <span class="nt">-exe</span> sim_main.cpp <span class="c"># &lt;-- design changes here</span>

@@ -6,7 +6,7 @@ description:
 nav: false
 ---
 
-1. Prepare Source Code
+### (a) Prepare Source Code
 
 cnt_ceil.v:
 ```verilog
@@ -56,7 +56,7 @@ module counter_tb;
 endmodule
 ```
 
-2. Prepare Verilator Wrapper
+### (b) Prepare Verilator Wrapper
 
 sim_main.cpp
 ```cpp
@@ -90,7 +90,7 @@ int main(int argc, char** argv){
 }
 ```
 
-3. To Run Simulation
+### (c) To Run Simulation
 
 run.sh
 ```bash
