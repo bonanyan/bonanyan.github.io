@@ -8,6 +8,8 @@ logo: bn.png
 
 ***
 
+*北京大学小米博雅青年学者*
+
 ### RESEARCH FIELD
 - Integrated Circuits Design for Artificial General Intelligence
 
