@@ -27,7 +27,7 @@ logo: bn.png
 ---
 ### COURSES
 - 本科生
-  - 数字系统原理与实践\[信班\]([24'spring](/digital_logic_lab/))
+  - 数字系统原理与实践\[信班\]([25'spring](/digital_logic_lab/))
   - 人工智能与集成电路\[通班\]([23'fall](/aichip2023/))
   - 人工智能芯片设计导论 ([23'fall](/aiic2023/))
 - 研究生

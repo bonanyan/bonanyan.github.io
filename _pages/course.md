@@ -8,7 +8,7 @@ nav_order: 3
 dropdown: true
 parent: root
 children: 
-    - title: 数字系统原理与实践[信班](24'春)
+    - title: 数字系统原理与实践[信班](25'春)
       permalink: /digital_logic_lab/
     - title: divider
     - title: 人工智能芯片：设计与实践(24'秋)
