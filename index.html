@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bonan Yan</title>
+<link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Fixed Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+<div class="container">
+<a class="navbar-brand" href="#">B. Y.<br>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item">
+<a class="nav-link" href="#RI">Research <br>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://bonany.cc/cv.html">CV<br>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://bonany.cc/pub.html">Publication<br>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#teaching">Teaching<br>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://bonany.cc/works.html">Works<br>
+</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://bonany.cc/group.html">Group<br>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<header>
+<div class="container">
+<img src="asset/img/bn.png" width="175" height="175" alt="" style="border-radius: 50%; object-fit: cover;";/>
+<h1>Bonan Yan</h1>
+</div>
+
+</header>
+
+<div class="container">
+<section class="section" id="about">
+<h2>About Me</h2>
+
+<p>Prof. Bonan Yan (燕博南), Ph.D. is an Assistant Professor at Institute for Artificial Intelligence, Peking University. He received his Ph.D. degree in Electrical and Computer Engineering from Duke University in 2020. His research focuses on artificial general intelligence processor chip design and integrated circuits design for emerging memory and computing-in-memory--primarily targeting at SRAM, RRAM, MRAM, PCM, flexible electronics, and monolithic 3D integration. He has published papers in top-tier international journals and conferences, including Nature, Nature Electronics, Nature Communications, ISSCC, IEDM and DAC. He was awarded the ACM SIGDA Outstanding New Faculty Award in 2024 and the CCF-Huawei Populus Euphratica Forest Fund Outstanding Proposal Award in Memory Systems from China Computer Federation (CCF). He serves as a TPC member for DAC, DATE, EDTM, etc.. His team developed a digital SRAM-based computing-in-memory AI processor chip that set a new world record for computing-in-memory energy efficiency at the time of its release. He is the co-inventor of first WASM hardware acceleartor processor and first fully-flexible compute-in-memory LSI chip.</p>
+</section>
+
+<section class="section" id="research">
+<h2>Research Interests</h2>
+<div class="education-item">
+<div class="degree">Processing-In-Memory Circuits and Systems</div>
+<div class="institution">Circuit Design,&nbsp;Domain-Specific/General Architecture</div>
+<div class="coursework-list">
+<div class="coursework-list">
+<ul>
+<li>SRAM</li>
+<li>RRAM</li>
+<li>PCM</li>
+<li>MRAM</li>
+</ul>
+</div>
+</div>
+
+<div class="education-item">
+<div class="degree">Artificial General Intelligent (AGI) Processors</div>
+<div class="institution">Perception,&nbsp;Reasoning,&nbsp;Cognition,&nbsp;Massive Multi-Agents Reinforcement Learning</div>
+<div class="coursework-list">
+<ul>
+<li>Deep Learning</li>
+<li>LLM</li>
+<li>Computer Vision</li>
+<li>Probabilitic Computing</li>
+</ul>
+</div>
+</div>
+</section>
+
+
+
+<section class="section" id="teaching">
+<h2>Teaching</h2>
+<div class="skills-grid">
+<div class="skill-category">
+<h4>&nbsp;Undergraduate</h4>
+<ul>
+<li>Digital Logic (Experimental Class)[<a href="https://bonany.cc/digital_logic_lab/">26’spring</a>]</li>
+<li>Artificial Intelligence & Integrated Circuits (Tong Class) [<a href="https://bonany.cc/aichip2023/">23’fall</a>]</li>
+<li>Introduction to AI Chip Design [<a href="https://bonany.cc/aiic2023/">23’fall</a>]</li>
+</ul>
+</div>
+
+<div class="skill-category">
+<h4>Graduate</h4>
+<ul>
+<li>Artificial Intelligence Chips: Design & Practice [<a href="https://bonany.cc/adap25/">25’fall</a>]</li>
+<li>Embedded System Programming & Practice [<a href="https://bonany.cc/esp25/">25’fall</a>]</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<h2>⭐️⭐️⭐️⭐️⭐️</h2>
+<div class="contact-info">
+<div class="contact-item">
+<strong>Email:</strong><br>
+bonanyan AT pku DOT edu DOT cn </div>
+<div class="contact-item">
+<strong>Google Scholar</strong><br>
+<a href="https://scholar.google.com/citations?user=oN9gwMIAAAAJ&hl=en">link</a>
+</div>
+<div class="contact-item">
+<strong>Copyrights</strong><br>
+All rights reserved.
+</div>
+</div>
+</section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80, // Adjust for navbar height
+behavior: 'smooth'
+});
+}
+});
+});
+
+// Highlight active nav link based on scroll position
+window.addEventListener('scroll', function() {
+const sections = document.querySelectorAll('.section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+let current = '';
+
+sections.forEach(section => {
+const sectionTop = section.offsetTop;
+const sectionHeight = section.clientHeight;
+
+if (pageYOffset >= (sectionTop - 100)) {
+current = section.getAttribute('id');
+}
+});
+
+navLinks.forEach(link => {
+link.classList.remove('active');
