@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fixed Navigation Bar -->
+    
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+      <div class="container"> <a class="navbar-brand" href="#">B. Y.<br>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse" id="navbarNav2">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"> <a class="nav-link" href="#RI">Research <br>
+            </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="https://bonany.cc/cv.html">CV<br>
+            </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="https://bonany.cc/pub.html">Publication<br>
+            </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="https://bonany.cc/#teaching">Teaching<br>
+            </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="https://bonany.cc/works.html">Works<br>
+            </a> </li>
+            <li class="nav-item"> <a class="nav-link" href="https://bonany.cc/group.html">Group<br>
+            </a> </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Bonan Yan, Ph.D.&nbsp;&nbsp;</h1>
+            <p class="subtitle">Assistant Professor, Peking University&nbsp; &nbsp;</p>
+        </div>
+    </header>
+    
+    <div class="container">
+<section class="section" id="education">
+      <h2>Software&nbsp;</h2>
+            <div class="education-item">
+                <div class="degree">PISLB</div>
+                <div class="institution"><a href="https://bonany.gitlab.io/pis/">https://bonany.gitlab.io/pis/</a></div>
+                <div class="year">open-source PIM macro Verilog/Chisel behavioral model library</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="degree">AttentionLego</div>
+                <div class="institution"><a href="https://bonany.cc/attentionlego/">https://bonany.cc/attentionlego/</a></div>
+                <div class="year">vanilla self-attention block for large language model accelerators</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="degree">Pyjuice</div>
+                <div class="institution">Beihang University, Beijing, China</div>
+                <div class="year">prbabilistic circuits【collaboration with <a href="https://liuanji.github.io">Dr. Anji Liu</a>; 】</div>
+            </div>
+        </section>
+<section class="section" id="workexperience">
+  <h2>Hints&nbsp;</h2>
+  <div class="education-item">
+    <div class="degree">How to achieve success in your PhD career?&nbsp; &nbsp; &nbsp;</div>
+    <div class="institution"><a href="asset/phdguide.md">notes</a></div>
+    <div class="year">Let them help you!</div>
+  </div>
+  <div class="education-item">
+    <div class="degree">You and Your Research</div>
+    <div class="institution"><a href="asset/youandyourresearch.md">here</a></div>
+    <div class="year">Great talk of Richard W. Hamming (Hamming code's inventor)</div>
+  </div>
+	<div class="education-item">
+    <div class="degree">Use Verilator to accelerate simlation of verilog hdl?&nbsp; &nbsp;</div>
+    <div class="institution"><a href="asset/verilatorverilog.md">here</a></div>
+    <div class="year">Useful tool :D</div>
+  </div>
+</section>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Adjust for navbar height
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Highlight active nav link based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
