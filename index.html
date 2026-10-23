@@ -1,174 +1,1358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bonan Yan</title>
-<link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bonan Yan 燕博南 — Assistant Professor, Institute for Artificial Intelligence, Peking University</title>
+<meta name="description" content="Bonan Yan (燕博南), Ph.D. is an Assistant Professor at the Institute for Artificial Intelligence, Peking University. His research focuses on artificial general intelligence processor chip design and integrated circuits design for emerging memory and computing-in-memory.">
+<meta name="author" content="Bonan Yan (燕博南)">
+<meta name="keywords" content="Bonan Yan, 燕博南, Peking University, Institute for Artificial Intelligence, compute-in-memory, processing-in-memory, CIM, AGI processor, SRAM, RRAM, MRAM, PCM, VLSI design, computer architecture, chip design">
+<meta name="theme-color" content="#FCFAF3">
+<link rel="canonical" href="https://bonany.cc/">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFQkYzNDUiLz48cmVjdCB4PSIzLjUiIHk9IjMuNSIgd2lkdGg9IjU3IiBoZWlnaHQ9IjU3IiBmaWxsPSJub25lIiBzdHJva2U9IiMwRTBFMTgiIHN0cm9rZS13aWR0aD0iNyIvPjx0ZXh0IHg9IjMxIiB5PSI0NSIgZm9udC1mYW1pbHk9IlNwYWNlIEdyb3Rlc2ssQXJpYWwgQmxhY2ssQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCIgZm9udC13ZWlnaHQ9IjcwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0xLjUiIGZpbGw9IiMwRTBFMTgiPkJZPC90ZXh0PjxyZWN0IHg9IjQ0IiB5PSI4IiB3aWR0aD0iOSIgaGVpZ2h0PSI5IiBmaWxsPSIjQ0IwRTgxIiBzdHJva2U9IiMwRTBFMTgiIHN0cm9rZS13aWR0aD0iMi41Ii8+PC9zdmc+">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Bonan Yan 燕博南">
+<meta property="og:title" content="Bonan Yan 燕博南 — Assistant Professor, Institute for Artificial Intelligence, Peking University">
+<meta property="og:description" content="Bonan Yan (燕博南), Ph.D. is an Assistant Professor at the Institute for Artificial Intelligence, Peking University — AGI processor chip design and compute-in-memory integrated circuits (SRAM, RRAM, MRAM, PCM).">
+<meta property="og:url" content="https://bonany.cc/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bonan Yan 燕博南 — Assistant Professor, Institute for Artificial Intelligence, Peking University">
+<meta name="twitter:description" content="Bonan Yan (燕博南), Ph.D. is an Assistant Professor at the Institute for Artificial Intelligence, Peking University — AGI processor chip design and compute-in-memory integrated circuits (SRAM, RRAM, MRAM, PCM).">
+<!-- WHY THIS COLOUR (采样→收敛→论证, one sentence): sampled the magenta-blue / gold-yellow iridescence a bare cleanroom silicon wafer throws under white light, cross-checked against The Verge 2022 electric identity and anchored by the portrait's deep-navy jacket (#0f1d34), converging on three FLAT oklch inks — electric blue #0664E7 (the draft's electric violet with its HSB hue rotated to 215° at unchanged S 97% / B 91%), acid yellow #EBF345, hot magenta #CB0E81 — on a warm-black→warm-white neutral ramp (#0E0E18→#FCFAF3) with portrait-navy #0A1630 the only dark field, so every blue stays a solid flat block clashing with acid yellow + ink and the page reads Verge neo-brutalism, never an AI-SaaS gradient. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap+Sharp:ital,wght@0,100..900;1,100..900&family=Noto+Sans+SC:wght@100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   d8 · VERGE NEO-BRUTALISM
+   display = Asap Sharp (variable grotesque, wdth 100)
+   body    = Asap Sharp
+   CJK     = Noto Sans SC fallback
+   tokens  = monospace spec-sheet (Space Mono)
+   ============================================================ */
+:root{
+  /* ---- converged palette (oklch) ---- */
+  --ink:      oklch(0.170 0.020 285);   /* #0E0E18 authored warm-black */
+  --ink-2:    oklch(0.320 0.020 285);   /* #32323D */
+  --paper:    oklch(0.985 0.010 095);   /* #FCFAF3 */
+  --paper-2:  oklch(0.955 0.016 095);   /* #F3F0E4 */
+  --blue:   oklch(0.540 0.213 260);   /* #0664E7 electric blue, FLAT */
+  --acid:     oklch(0.928 0.185 112);   /* #EBF345 acid yellow */
+  --magenta:  oklch(0.556 0.225 352);   /* #CB0E81 hot magenta */
+  --navy:     oklch(0.205 0.055 264);   /* #0A1630 portrait-jacket navy: the only dark field */
+
+  /* ---- brutalist construction tokens ---- */
+  --bd: 3px;
+  --sh: 6px;
+  --sh-hi: 10px;
+
+  /* ---- type ---- */
+  --disp: "Asap Sharp","Noto Sans SC","PingFang SC","Hiragino Sans GB","Avenir Next","Trebuchet MS",ui-sans-serif,sans-serif;
+  --serif:"Asap Sharp","Noto Sans SC","PingFang SC","Hiragino Sans GB",ui-sans-serif,sans-serif;
+  --mono: "Space Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --cjk:  "Noto Sans SC","PingFang SC","Hiragino Sans GB","Source Han Sans SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif;
+
+  --fs-body: clamp(15.5px, 0.22vw + 15.1px, 17px);
+  --g: clamp(14px, 2.1vw, 26px);
+  --pad: clamp(14px, 3.4vw, 44px);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:clip;-webkit-text-size-adjust:100%}
+body{
+  margin:0;overflow-x:clip;
+  background:var(--paper);color:var(--ink);
+  font-family:var(--serif);font-size:var(--fs-body);line-height:1.62;
+  font-optical-sizing:auto;
+  font-variation-settings:"wdth" 100;
+  font-synthesis-weight:none;
+}
+img{max-width:100%;display:block}
+a{color:var(--blue)}
+h1,h2,h3,h4{margin:0;font-family:var(--disp);font-weight:700;line-height:.98;letter-spacing:-.02em}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+/* inverted (acid) focus ring where the field is dark */
+.pad:focus-visible,#footNav a:focus-visible,.pc-link:focus-visible,.btn.ghost:focus-visible,
+.kind.reset:focus-visible,.kind[aria-pressed="true"]:focus-visible,.wl[aria-pressed="true"]:focus-visible{outline-color:var(--acid)}
+.mono{font-family:var(--mono)}
+
+.wrap{max-width:1400px;margin-inline:auto;padding-inline:var(--pad)}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--acid);color:var(--ink);
+  border:var(--bd) solid var(--ink);padding:10px 16px;font-family:var(--disp);font-weight:700}
+.skip:focus{left:10px;top:10px}
+
+/* micro-label primitive */
+.lab{font-family:var(--mono);font-size:11px;line-height:1.3;letter-spacing:.16em;text-transform:uppercase}
+
+/* ============================================================
+   BOND-PAD HEADER  (chip's pad row = module navigation)
+   ============================================================ */
+#hdr{position:sticky;top:0;z-index:90;background:var(--ink);color:var(--paper);
+  border-bottom:var(--bd) solid var(--ink)}
+.hdr-in{max-width:1400px;margin-inline:auto;padding:8px var(--pad) 0;display:flex;gap:14px;align-items:stretch}
+.pad-id{display:flex;align-items:center;gap:10px;flex:0 0 auto;padding-bottom:8px}
+.pad-mark{width:38px;height:38px;flex:0 0 auto;background:var(--acid);color:var(--ink);
+  border:var(--bd) solid var(--paper);display:grid;place-items:center;
+  font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:-.04em}
+.pad-txt{display:flex;flex-direction:column;gap:2px}
+.pad-txt b{font-family:var(--disp);font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--paper)}
+.pad-txt span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--acid)}
+.pads{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;flex:1 1 auto;margin-left:auto;align-items:flex-end}
+.pads::-webkit-scrollbar{display:none}
+.pad{flex:0 0 auto;background:transparent;border:0;border-bottom:4px solid transparent;
+  padding:9px 11px 8px;cursor:pointer;display:flex;align-items:baseline;gap:6px;white-space:nowrap;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--paper-2);
+  transition:background .16s linear,color .16s linear,border-color .16s linear}
+.pad i{font-style:normal;color:var(--acid);font-weight:700;font-size:11px}
+.pad:hover{background:var(--blue);color:var(--paper)}
+.pad:hover i{color:var(--acid)}
+.pad[aria-current="true"]{background:var(--acid);color:var(--ink);border-bottom-color:var(--magenta)}
+.pad[aria-current="true"] i{color:var(--blue)}
+.pad-live{flex:0 0 auto;padding:9px 0 8px 12px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  color:var(--acid);border-left:2px solid var(--ink-2);display:none;align-items:center}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;overflow:hidden;background:var(--paper);border-bottom:var(--bd) solid var(--ink)}
+.hero-xbar{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.55}
+.hero-in{position:relative;z-index:1;padding-block:clamp(24px,3.4vw,50px) clamp(22px,3vw,40px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);
+  gap:clamp(22px,3.2vw,54px);align-items:end}
+
+.eyebrow{display:inline-flex;flex-wrap:wrap;align-items:center;gap:0;background:var(--ink);color:var(--acid);
+  border:var(--bd) solid var(--ink);box-shadow:var(--sh) var(--sh) 0 var(--blue)}
+.eyebrow span{padding:7px 12px;font-family:var(--mono);font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;line-height:1.25}
+.eyebrow span+span{border-left:2px solid var(--ink-2);color:var(--paper)}
+
+h1.name{margin:clamp(14px,1.8vw,22px) 0 0;font-size:clamp(3.1rem,10.4vw,8.2rem);
+  letter-spacing:-.045em;line-height:.84;text-transform:uppercase}
+h1.name .l1{display:block;color:var(--ink)}
+h1.name .l2{display:inline-block;margin-top:.06em;background:var(--blue);color:var(--paper);
+  border:var(--bd) solid var(--ink);box-shadow:var(--sh) var(--sh) 0 var(--acid);
+  padding:.02em .12em .06em}
+.cjk-name{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:clamp(12px,1.5vw,18px)}
+.cjk-name b{font-family:var(--cjk);font-weight:700;font-size:clamp(1.5rem,3.4vw,2.35rem);
+  letter-spacing:.14em;color:var(--ink);border-bottom:5px solid var(--magenta);padding-bottom:2px;line-height:1.15}
+.cjk-name em{font-style:normal;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-2)}
+.role{margin-top:clamp(14px,1.8vw,20px);max-width:44ch;font-size:clamp(1.02rem,.4vw + .95rem,1.24rem);
+  line-height:1.5;color:var(--ink)}
+.role b{font-weight:700;background:var(--acid);box-shadow:3px 0 0 var(--acid),-3px 0 0 var(--acid);
+  box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+/* portrait — clean geometric frame, COLOUR, no filters */
+.pf{position:relative;width:min(100%,clamp(300px,26vw,400px));justify-self:end}
+.pf-panel{background:var(--blue);border:var(--bd) solid var(--ink);box-shadow:var(--sh-hi) var(--sh-hi) 0 var(--ink);
+  padding:clamp(14px,1.5vw,22px)}
+.pf-mat{background:var(--paper);border:var(--bd) solid var(--ink);padding:clamp(10px,1.1vw,16px)}
+.pf-mat img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:var(--paper-2);
+  filter:none;-webkit-filter:none}
+.pf-cap{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.pf-tag{background:var(--ink);color:var(--acid);border:var(--bd) solid var(--ink);
+  padding:6px 10px;font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase}
+.pf-tag.alt{background:var(--acid);color:var(--ink)}
+
+/* ============================================================
+   VENUE TICKER (generated from real PUBS tags)
+   ============================================================ */
+.tick{background:var(--acid);border-bottom:var(--bd) solid var(--ink);overflow:hidden;position:relative}
+.tick-row{display:flex;width:max-content;animation:tickrun 46s linear infinite}
+.tick:hover .tick-row{animation-play-state:paused}
+.tick-row span{flex:0 0 auto;padding:9px 0;font-family:var(--disp);font-weight:700;font-size:14px;
+  letter-spacing:.02em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center}
+.tick-row span::after{content:"";width:9px;height:9px;margin:0 16px;background:var(--blue);
+  border:2px solid var(--ink);flex:0 0 auto}
+@keyframes tickrun{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+
+/* ============================================================
+   MODULE (section) SHELL — die floorplan block
+   ============================================================ */
+.mod{border-bottom:var(--bd) solid var(--ink);padding-block:clamp(30px,4vw,62px)}
+.mod-hd{display:flex;align-items:stretch;gap:0;border:var(--bd) solid var(--ink);
+  background:var(--ink);color:var(--paper);box-shadow:var(--sh) var(--sh) 0 var(--blue);flex-wrap:wrap}
+.mod-hd .uid{flex:0 0 auto;background:var(--acid);color:var(--ink);border-right:var(--bd) solid var(--ink);
+  padding:10px 13px;font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.1em;
+  display:flex;align-items:center}
+.mod-hd h2{flex:1 1 auto;min-width:0;padding:12px 16px;color:var(--paper);
+  font-size:clamp(1.42rem,2.9vw,2.5rem);text-transform:uppercase;letter-spacing:-.025em;display:flex;align-items:center}
+.mod-hd .coord{flex:0 0 auto;padding:10px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.13em;
+  color:var(--acid);border-left:var(--bd) solid var(--ink-2);display:flex;align-items:center;text-transform:uppercase}
+.mod.v .mod-hd{background:var(--blue);box-shadow:var(--sh) var(--sh) 0 var(--acid)}
+.mod.v .mod-hd h2{color:var(--paper)} .mod.v .mod-hd .uid{background:var(--acid);color:var(--ink)}
+.mod.v .mod-hd .coord{color:var(--acid);border-left-color:oklch(0.70 0.12 257)}
+.mod.m .mod-hd{background:var(--magenta);box-shadow:var(--sh) var(--sh) 0 var(--acid)}
+.mod.m .mod-hd h2{color:var(--paper)} .mod.m .mod-hd .coord{color:var(--acid);border-left-color:oklch(0.68 0.14 352)}
+.mod.a .mod-hd{background:var(--acid);box-shadow:var(--sh) var(--sh) 0 var(--ink)}
+.mod.a .mod-hd h2,.mod.a .mod-hd .coord{color:var(--ink)} .mod.a .mod-hd .uid{background:var(--ink);color:var(--acid);border-right-color:var(--ink)}
+.mod.a .mod-hd .coord{border-left-color:oklch(0.72 0.13 112)}
+.mod.n .mod-hd{background:var(--navy);box-shadow:var(--sh) var(--sh) 0 var(--magenta)}
+.mod.n .mod-hd .coord{border-left-color:oklch(0.42 0.06 264)}
+.mod-body{margin-top:clamp(18px,2.2vw,30px)}
+
+/* generic panel */
+.panel{border:var(--bd) solid var(--ink);background:var(--paper);box-shadow:var(--sh) var(--sh) 0 var(--ink);padding:clamp(16px,2vw,30px)}
+.panel.tint{background:var(--paper-2)}
+
+/* ============================================================
+   U1 ABOUT
+   ============================================================ */
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(16px,2vw,28px);align-items:start}
+.about-body{font-size:clamp(1.02rem,.4vw + .95rem,1.2rem);line-height:1.68;max-width:74ch}
+.about-body p+p{margin-top:1.05em}
+.about-body .drop::first-letter{font-family:var(--disp);font-weight:700;font-size:3.6em;line-height:.78;
+  float:left;margin:.06em .1em 0 0;color:var(--blue)}
+.about-body b{font-weight:700;background:var(--acid);box-shadow:3px 0 0 var(--acid),-3px 0 0 var(--acid);
+  box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.mark-list{border:var(--bd) solid var(--ink);background:var(--ink);color:var(--paper);box-shadow:var(--sh) var(--sh) 0 var(--acid)}
+.mark-list h3{padding:10px 13px;background:var(--acid);color:var(--ink);font-size:13px;letter-spacing:.11em;
+  text-transform:uppercase;border-bottom:var(--bd) solid var(--ink);font-family:var(--mono);font-weight:700}
+.mark-list li{padding:9px 13px;border-bottom:2px solid var(--ink-2);font-family:var(--disp);font-weight:700;
+  font-size:15px;letter-spacing:.01em;text-transform:uppercase;color:var(--paper);display:flex;gap:9px;align-items:baseline}
+.mark-list li:last-child{border-bottom:0}
+.mark-list li i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--acid);letter-spacing:.08em}
+.mark-list li em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--paper-2);
+  letter-spacing:.06em;margin-left:auto;text-transform:none}
+
+/* ============================================================
+   U2 RESEARCH — two clashing blocks + 8 chips
+   ============================================================ */
+.ri{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,28px)}
+.ri-b{border:var(--bd) solid var(--ink);box-shadow:var(--sh-hi) var(--sh-hi) 0 var(--ink);padding:clamp(16px,1.8vw,26px)}
+.ri-b.k1{background:var(--blue);color:var(--paper)}
+.ri-b.k2{background:var(--acid);color:var(--ink)}
+.ri-n{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  display:inline-block;border:2px solid currentColor;padding:4px 8px;margin-bottom:12px}
+.ri-b h3{font-size:clamp(1.3rem,2.1vw,1.95rem);text-transform:uppercase;letter-spacing:-.025em;line-height:1.02}
+.ri-b .ri-sub{margin-top:11px;font-family:var(--serif);font-size:15.5px;line-height:1.55}
+.ri-b .ri-chips-lab{margin-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;opacity:1}
+.ri-b.k1 .ri-chips-lab{color:var(--acid)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
+.chip{border:2px solid var(--ink);background:var(--paper);color:var(--ink);padding:6px 11px;
+  font-family:var(--disp);font-weight:700;font-size:13.5px;letter-spacing:.02em;text-transform:uppercase;
+  box-shadow:3px 3px 0 var(--ink);transition:transform .14s linear,box-shadow .14s linear,background .14s linear}
+.chip:hover{background:var(--magenta);color:var(--paper);transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.ri-b.k1 .chip{border-color:var(--ink)}
+
+/* ============================================================
+   U3/U4 EDUCATION + WORK — spec-sheet rows
+   ============================================================ */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,28px);align-items:start}
+.rows{border:var(--bd) solid var(--ink);background:var(--paper);box-shadow:var(--sh) var(--sh) 0 var(--ink)}
+.rows>li{padding:clamp(14px,1.5vw,20px);border-bottom:var(--bd) solid var(--ink);position:relative;
+  transition:background .16s linear,color .16s linear}
+.rows>li:last-child{border-bottom:0}
+.rows>li:hover{background:var(--acid)}
+.rows .r-top{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.rows .r-i{font-family:var(--mono);font-weight:700;font-size:11.5px;letter-spacing:.1em;color:var(--ink);
+  background:var(--paper-2);border:2px solid var(--ink);padding:3px 7px;flex:0 0 auto}
+.rows>li:hover .r-i{background:var(--ink);color:var(--acid);border-color:var(--ink)}
+.rows .r-d{margin-left:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.rows h3{margin-top:9px;font-size:clamp(1.08rem,1.2vw,1.34rem);text-transform:none;letter-spacing:-.015em;line-height:1.16}
+.rows .r-org{margin-top:6px;font-family:var(--disp);font-weight:500;font-size:14.5px;letter-spacing:.02em;text-transform:uppercase}
+.rows .r-meta{margin-top:6px;font-size:14.5px;line-height:1.55;color:var(--ink)}
+.inst{display:inline-block;font-family:var(--disp);font-weight:700;font-size:14px;letter-spacing:.1em;
+  text-transform:uppercase;border-bottom:3px solid var(--magenta)}
+.tagrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tg{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  border:2px solid var(--ink);padding:3px 7px;background:var(--paper)}
+.rows>li:hover .tg{background:var(--paper);border-color:var(--ink)}
+
+/* ============================================================
+   U5 AWARDS ledger
+   ============================================================ */
+.aw-ledger{border:var(--bd) solid var(--ink);background:var(--paper);box-shadow:var(--sh) var(--sh) 0 var(--magenta)}
+.aw{display:grid;grid-template-columns:64px minmax(0,1fr) 132px;gap:6px 16px;align-items:baseline;
+  padding:clamp(12px,1.3vw,17px) clamp(14px,1.6vw,22px);border-bottom:2px solid var(--ink);
+  transition:background .15s linear,transform .15s linear,box-shadow .15s linear}
+.aw:last-child{border-bottom:0}
+.aw:hover{background:var(--blue);color:var(--paper);transform:translateX(4px);box-shadow:inset 8px 0 0 var(--acid)}
+.aw-i{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.09em;color:var(--ink)}
+.aw:hover .aw-i{color:var(--acid)}
+.aw h3{font-size:clamp(1rem,1.05vw,1.18rem);text-transform:none;letter-spacing:-.012em;line-height:1.2;font-weight:700}
+.aw .aw-org{margin-top:5px;font-size:14.5px;line-height:1.5;color:inherit}
+.aw .aw-org span{opacity:1}
+.aw-d{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;text-align:right;
+  border:2px solid var(--ink);padding:4px 8px;background:var(--paper-2);color:var(--ink);justify-self:end}
+.aw:hover .aw-d{background:var(--acid);border-color:var(--acid);color:var(--ink)}
+.aw-note{margin-top:12px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+
+/* ============================================================
+   U6 TEACHING
+   ============================================================ */
+.course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,285px),1fr));gap:clamp(14px,1.6vw,22px)}
+.course{border:var(--bd) solid var(--ink);background:var(--paper);box-shadow:var(--sh) var(--sh) 0 var(--ink);
+  padding:clamp(14px,1.5vw,20px);display:flex;flex-direction:column;gap:10px;
+  transition:transform .15s linear,box-shadow .15s linear,background .15s linear,color .15s linear}
+.course:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--blue);background:var(--ink);color:var(--paper)}
+.course .term{align-self:flex-start;background:var(--magenta);color:var(--paper);border:2px solid var(--ink);
+  padding:4px 9px;font-family:var(--mono);font-weight:700;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+.course:hover .term{background:var(--acid);color:var(--ink)}
+.course h3{font-size:clamp(1.02rem,1.1vw,1.22rem);text-transform:none;letter-spacing:-.015em;line-height:1.18}
+.course .lvl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.course:hover .lvl{color:var(--acid)}
+.course .go{margin-top:auto;align-self:flex-start;font-family:var(--disp);font-weight:700;font-size:13px;
+  letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--ink);padding:5px 10px;background:var(--acid);
+  color:var(--ink);text-decoration:none;box-shadow:3px 3px 0 var(--ink)}
+.course:hover .go{background:var(--blue);color:var(--paper);border-color:var(--paper);box-shadow:3px 3px 0 var(--acid)}
+.course .go span{font-family:var(--mono);font-size:11px;word-break:break-all;letter-spacing:0;text-transform:none;display:block;margin-top:2px;font-weight:400}
+.grp-lab{margin:0 0 10px;display:flex;align-items:center;gap:10px}
+.grp-lab b{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+  background:var(--ink);color:var(--acid);padding:5px 10px;border:2px solid var(--ink)}
+.grp-lab i{flex:1 1 auto;height:0;border-top:3px solid var(--ink);font-style:normal}
+
+/* ============================================================
+   U7 PUBLICATIONS — BITCELL ARRAY + CARD FEED
+   ============================================================ */
+.array{border:var(--bd) solid var(--ink);background:var(--paper-2);box-shadow:var(--sh) var(--sh) 0 var(--blue)}
+.array-hd{display:flex;flex-wrap:wrap;gap:0;border-bottom:var(--bd) solid var(--ink);align-items:stretch}
+.array-hd .ah{padding:9px 13px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  display:flex;align-items:center;gap:7px;background:var(--ink);color:var(--paper)}
+.array-hd .ah b{color:var(--acid)}
+.array-hd .ah+.ah{border-left:2px solid var(--ink-2)}
+.array-hd .ah.grow{flex:1 1 auto;background:var(--acid);color:var(--ink);border-left:2px solid var(--ink)}
+.array-hd .ah.grow b{color:var(--blue)}
+
+.kinds{display:flex;flex-wrap:wrap;gap:0;border-bottom:var(--bd) solid var(--ink)}
+.kind{flex:1 1 auto;min-width:120px;background:var(--paper);border:0;border-right:var(--bd) solid var(--ink);
+  padding:11px 13px;cursor:pointer;text-align:left;display:flex;align-items:baseline;gap:8px;
+  font-family:var(--disp);font-weight:700;font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;
+  transition:background .15s linear,color .15s linear}
+.kind:last-child{border-right:0}
+.kind em{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.06em}
+.kind:hover{background:var(--acid)}
+.kind[aria-pressed="true"]{background:var(--ink);color:var(--acid)}
+.kind[aria-pressed="true"] em{color:var(--paper)}
+.kind.reset{flex:0 0 auto;min-width:0;background:var(--magenta);color:var(--paper)}
+.kind.reset:hover{background:var(--ink);color:var(--acid)}
+
+.wlwrap{padding:clamp(12px,1.4vw,18px)}
+.wl-lab{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.wl-lab b{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.wl-lab i{flex:1 1 auto;border-top:3px solid var(--ink);font-style:normal}
+.wl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:6px}
+.wl{border:2px solid var(--ink);background:var(--paper);cursor:pointer;padding:6px 7px 5px;min-width:0;
+  display:flex;flex-direction:column;gap:3px;text-align:left;
+  transition:background .13s linear,color .13s linear,transform .13s linear,box-shadow .13s linear}
+.wl b{font-family:var(--disp);font-weight:700;font-size:11.5px;letter-spacing:.01em;line-height:1.15;
+  text-transform:uppercase;overflow-wrap:anywhere;color:inherit}
+.wl em{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-2);line-height:1}
+.wl:hover{background:var(--acid);transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.wl:hover em{color:var(--ink)}
+.wl[aria-pressed="true"]{background:var(--blue);color:var(--paper);box-shadow:3px 3px 0 var(--ink);transform:translate(-2px,-2px)}
+.wl[aria-pressed="true"] em{color:var(--acid)}
+
+.feed-hd{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  margin:clamp(18px,2.2vw,28px) 0 14px;padding-bottom:10px;border-bottom:var(--bd) solid var(--ink)}
+.feed-hd h3{font-size:clamp(1.1rem,1.8vw,1.55rem);text-transform:uppercase;letter-spacing:-.02em}
+.readout{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ro{background:var(--ink);color:var(--acid);border:2px solid var(--ink);padding:5px 9px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.ro.alt{background:var(--acid);color:var(--ink)}
+
+.feed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,1.7vw,24px)}
+.pcell{border:var(--bd) solid var(--ink);background:var(--paper);color:var(--ink);
+  box-shadow:var(--sh) var(--sh) 0 var(--ink);padding:clamp(14px,1.5vw,20px);
+  display:flex;flex-direction:column;gap:9px;min-width:0;
+  transition:background .17s linear,color .17s linear,transform .17s linear,box-shadow .17s linear}
+.pcell:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--sh-c,var(--blue))}
+.pcell.f-v:hover{background:var(--blue);color:var(--paper);--sh-c:var(--acid)}
+.pcell.f-a:hover{background:var(--acid);color:var(--ink);--sh-c:var(--magenta)}
+.pcell.f-m:hover{background:var(--magenta);color:var(--paper);--sh-c:var(--acid)}
+.pcell.off{display:none}
+.pc-hd{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pc-id{font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.1em;color:inherit;
+  border:2px solid currentColor;padding:3px 6px}
+.pc-venue{font-family:var(--disp);font-weight:700;font-size:clamp(12.5px,1.05vw,15px);letter-spacing:-.005em;
+  text-transform:uppercase;background:var(--ink);color:var(--acid);border:2px solid var(--ink);
+  padding:3px 9px;line-height:1.22;overflow-wrap:anywhere}
+.pcell:hover .pc-venue{background:var(--acid);color:var(--ink);border-color:var(--acid)}
+.pcell.f-a:hover .pc-venue{background:var(--ink);color:var(--acid);border-color:var(--ink)}
+.pc-kind{margin-left:auto;font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:inherit}
+.pc-t{font-family:var(--serif);font-weight:600;font-size:clamp(1rem,0.5vw + .92rem,1.14rem);line-height:1.34;
+  letter-spacing:-.006em;text-wrap:pretty}
+.pc-a{font-family:var(--disp);font-weight:500;font-size:14px;line-height:1.5;color:inherit}
+.pc-a b.me{font-weight:700;background:var(--acid);color:var(--ink);padding:0 3px;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.pcell.f-a:hover .pc-a b.me{background:var(--blue);color:var(--paper)}
+.pc-a sup.ca{font-family:var(--mono);font-size:11px;vertical-align:super;line-height:0;color:inherit}
+.pc-v{font-family:var(--mono);font-size:11.5px;line-height:1.45;letter-spacing:.02em;color:inherit;overflow-wrap:anywhere}
+.pc-ft{margin-top:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding-top:4px}
+.pc-link{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:var(--paper);
+  border:2px solid var(--ink);padding:5px 10px;text-decoration:none;
+  font-family:var(--disp);font-weight:700;font-size:12px;letter-spacing:.09em;text-transform:uppercase;
+  box-shadow:3px 3px 0 var(--ink);transition:transform .14s linear,box-shadow .14s linear,background .14s linear}
+.pc-link:hover{background:var(--acid);color:var(--ink);transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.pcell:hover .pc-link{background:var(--acid);color:var(--ink);border-color:var(--ink)}
+.pcell.f-a:hover .pc-link{background:var(--ink);color:var(--acid)}
+.pc-nolink{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:inherit;
+  border:2px dashed currentColor;padding:5px 9px}
+.feed-end{margin-top:16px;border:var(--bd) solid var(--ink);background:var(--ink);color:var(--acid);
+  padding:11px 14px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;text-align:center}
+
+/* ============================================================
+   U8 SOFTWARE / U9 HINTS
+   ============================================================ */
+.sw{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:clamp(14px,1.7vw,24px)}
+.swcard{border:var(--bd) solid var(--ink);background:var(--paper);box-shadow:var(--sh) var(--sh) 0 var(--acid);
+  padding:clamp(15px,1.6vw,22px);display:flex;flex-direction:column;gap:10px;
+  transition:transform .15s linear,box-shadow .15s linear,background .15s linear,color .15s linear}
+.swcard:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--magenta);background:var(--blue);color:var(--paper)}
+.swcard .sn{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.swcard:hover .sn{color:var(--acid)}
+.swcard h3{font-size:clamp(1.3rem,2vw,1.85rem);text-transform:uppercase;letter-spacing:-.03em;line-height:.98}
+.swcard p{font-size:15px;line-height:1.55}
+.swcard a{font-family:var(--mono);font-size:12px;letter-spacing:.02em;word-break:break-all;color:inherit;
+  border-bottom:3px solid currentColor;text-decoration:none;padding-bottom:2px}
+.hint{border-left:0}
+.hint .q{font-family:var(--serif);font-style:italic;font-size:15.5px;line-height:1.5}
+.swcard:nth-child(2){box-shadow:var(--sh) var(--sh) 0 var(--blue)}
+.swcard:nth-child(3){box-shadow:var(--sh) var(--sh) 0 var(--magenta)}
+
+/* ============================================================
+   U10 GROUP — 3×3 macro array
+   ============================================================ */
+.grp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(13px,1.5vw,20px)}
+.mem{border:var(--bd) solid var(--ink);background:var(--paper);box-shadow:5px 5px 0 var(--ink);
+  padding:clamp(13px,1.4vw,18px);display:flex;flex-direction:column;gap:8px;
+  transition:transform .15s linear,box-shadow .15s linear,background .15s linear,color .15s linear}
+.mem:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--blue);background:var(--acid)}
+.mem .yr{font-family:var(--disp);font-weight:700;font-size:clamp(2.1rem,3.4vw,3rem);line-height:.8;
+  letter-spacing:-.055em;color:var(--blue)}
+.mem:hover .yr{color:var(--ink)}
+.mem .yrl{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.mem:hover .yrl{color:var(--ink)}
+.mem h3{font-size:clamp(1.05rem,1.3vw,1.3rem);text-transform:uppercase;letter-spacing:-.02em;line-height:1.05}
+.mem p{font-size:14.5px;line-height:1.5}
+.recruit{margin-top:clamp(16px,2vw,26px);border:var(--bd) solid var(--ink);background:var(--magenta);color:var(--paper);
+  box-shadow:var(--sh-hi) var(--sh-hi) 0 var(--ink);padding:clamp(16px,2vw,26px);
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(14px,2vw,26px);align-items:center}
+.stamp{border:var(--bd) solid var(--acid);color:var(--acid);background:var(--ink);padding:12px 14px;
+  font-family:var(--disp);font-weight:700;font-size:clamp(1.6rem,3.4vw,2.6rem);line-height:.86;letter-spacing:-.04em;
+  text-transform:uppercase;transform:rotate(-3deg);text-align:center}
+.recruit .rt b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--acid);margin-bottom:8px}
+.recruit .rt p{font-family:var(--cjk),var(--serif);font-size:clamp(1.05rem,1.4vw,1.4rem);line-height:1.45;font-weight:600}
+
+/* ============================================================
+   U11 ADVICE 中文
+   ============================================================ */
+.mod.zh .mod-hd h2{font-family:var(--cjk);letter-spacing:.04em;font-weight:700}
+.zh-body{font-family:var(--cjk);font-size:16.5px;line-height:1.95;letter-spacing:.012em;color:var(--ink)}
+.zh-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(13px,1.5vw,20px)}
+.zh-stage{border:var(--bd) solid var(--ink);background:var(--paper);box-shadow:5px 5px 0 var(--ink);
+  padding:clamp(14px,1.6vw,20px);display:flex;flex-direction:column;gap:9px}
+.zh-stage.full{grid-column:1/-1}
+.zh-stage:nth-child(odd){box-shadow:5px 5px 0 var(--blue)}
+.zh-stage:nth-child(even){box-shadow:5px 5px 0 var(--magenta)}
+.zh-stage h3{align-self:flex-start;background:var(--ink);color:var(--acid);border:2px solid var(--ink);
+  padding:6px 11px;font-family:var(--cjk);font-size:15px;letter-spacing:.06em;line-height:1.25}
+.zh-stage p{font-size:16.5px;line-height:1.92}
+.zh-stage p .mail{font-family:var(--mono);font-size:14px;letter-spacing:0;background:var(--acid);
+  border:2px solid var(--ink);padding:1px 5px;overflow-wrap:anywhere}
+.zh-crit{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(11px,1.3vw,18px);margin-top:14px}
+.crit{border:var(--bd) solid var(--ink);background:var(--paper-2);box-shadow:5px 5px 0 var(--ink);padding:13px 14px;
+  display:flex;flex-direction:column;gap:8px;transition:transform .15s linear,box-shadow .15s linear,background .15s linear}
+.crit:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--acid);background:var(--blue);color:var(--paper)}
+.crit b{font-family:var(--cjk);font-size:clamp(1.35rem,2.2vw,1.85rem);font-weight:700;line-height:1.1;letter-spacing:.06em}
+.crit span{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2)}
+.crit:hover span{color:var(--acid)}
+.crit p{font-family:var(--cjk);font-size:15.5px;line-height:1.85}
+.zh-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.zl{border:var(--bd) solid var(--ink);background:var(--acid);color:var(--ink);padding:8px 12px;text-decoration:none;
+  font-family:var(--disp);font-weight:700;font-size:13.5px;letter-spacing:.01em;box-shadow:4px 4px 0 var(--ink);
+  display:inline-flex;gap:8px;align-items:center;transition:transform .14s linear,box-shadow .14s linear,background .14s linear,color .14s linear}
+.zl:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--blue);background:var(--ink);color:var(--acid)}
+.zl i{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.zh-dir{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+.zh-dir span{border:2px solid var(--ink);background:var(--paper);padding:6px 11px;font-family:var(--disp);
+  font-weight:700;font-size:13px;letter-spacing:.01em;text-transform:uppercase;box-shadow:3px 3px 0 var(--blue)}
+.zh-dir span:nth-child(2n){box-shadow:3px 3px 0 var(--magenta)}
+.zh-dir span:nth-child(3n){box-shadow:3px 3px 0 var(--acid)}
+.zh-body a{color:var(--blue);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:3px}
+.mod.zh .panel{background:var(--paper-2);box-shadow:var(--sh) var(--sh) 0 var(--acid)}
+
+/* ============================================================
+   U12 CONTACT — compute-in-memory readout
+   ============================================================ */
+.contact{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(16px,2vw,28px);align-items:start}
+.cim{border:var(--bd) solid var(--ink);background:var(--ink);color:var(--paper);box-shadow:var(--sh-hi) var(--sh-hi) 0 var(--blue)}
+.cim-hd{background:var(--acid);color:var(--ink);border-bottom:var(--bd) solid var(--ink);padding:9px 13px;
+  font-family:var(--mono);font-weight:700;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;
+  display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.cim-hd em{font-style:normal;margin-left:auto;color:var(--blue)}
+.cim-body{padding:clamp(15px,1.7vw,22px)}
+.cells{display:flex;flex-wrap:wrap;gap:7px}
+.cell{border:2px solid var(--acid);background:var(--navy);color:var(--acid);padding:9px 11px;
+  font-family:var(--mono);font-size:14px;letter-spacing:.04em;overflow-wrap:anywhere}
+.cell.op{border-style:dashed;border-color:var(--paper-2);color:var(--paper);background:transparent;font-size:12px}
+.cim-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
+.btn{cursor:pointer;border:var(--bd) solid var(--ink);background:var(--acid);color:var(--ink);padding:10px 15px;
+  font-family:var(--disp);font-weight:700;font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;
+  box-shadow:4px 4px 0 var(--magenta);transition:transform .14s linear,box-shadow .14s linear,background .14s linear,color .14s linear}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--magenta);background:var(--blue);color:var(--paper)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--magenta)}
+.btn.ghost{background:transparent;color:var(--acid);border-color:var(--acid);box-shadow:4px 4px 0 var(--blue)}
+.btn.ghost:hover{background:var(--acid);color:var(--ink);border-color:var(--acid);box-shadow:6px 6px 0 var(--blue)}
+.reg{margin-top:16px;border:2px solid var(--acid);background:var(--navy);padding:12px 14px;
+  font-family:var(--mono);font-size:clamp(13px,1.3vw,17px);letter-spacing:.02em;color:var(--acid);
+  overflow-wrap:anywhere;line-height:1.45}
+.reg .rl{display:block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--paper);margin-bottom:6px}
+.reg.done{background:var(--acid);color:var(--ink);border-color:var(--acid)}
+.reg.done .rl{color:var(--blue)}
+.cside{display:flex;flex-direction:column;gap:clamp(13px,1.5vw,20px)}
+.slink{border:var(--bd) solid var(--ink);background:var(--paper);box-shadow:var(--sh) var(--sh) 0 var(--magenta);
+  padding:clamp(14px,1.5vw,20px);text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:8px;
+  transition:transform .15s linear,box-shadow .15s linear,background .15s linear,color .15s linear}
+.slink:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink);background:var(--acid)}
+.slink b{font-family:var(--disp);font-weight:700;font-size:clamp(1.05rem,1.4vw,1.35rem);text-transform:uppercase;letter-spacing:-.02em}
+.slink span{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;overflow-wrap:anywhere;color:var(--ink-2)}
+.slink:hover span{color:var(--ink)}
+.slink i{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  background:var(--ink);color:var(--acid);align-self:flex-start;padding:4px 8px}
+
+/* ============================================================
+   FOOTER colophon
+   ============================================================ */
+footer{background:var(--navy);color:var(--paper);border-top:var(--bd) solid var(--ink);padding-block:clamp(26px,3vw,44px)}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,2.4vw,36px)}
+footer h4{font-size:12px;font-family:var(--mono);font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--acid);margin-bottom:11px}
+footer p,footer li{font-size:14.5px;line-height:1.62;color:var(--paper)}
+footer .swatches{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+footer .swatches i{width:34px;height:34px;border:2px solid var(--paper);font-style:normal;display:block}
+footer .bigname{font-family:var(--disp);font-weight:700;font-size:clamp(1.8rem,4.4vw,3.4rem);line-height:.88;
+  letter-spacing:-.045em;text-transform:uppercase;color:var(--paper)}
+footer .bigname em{font-style:normal;color:var(--acid)}
+.cright{margin-top:clamp(22px,2.6vw,36px);border-top:2px solid var(--ink-2);padding-top:14px;
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
+.cright p{font-family:var(--mono);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--paper-2)}
+.cright p b{color:var(--acid)}
+
+/* ============================================================
+   MOTION — one orchestrated load reveal + restrained scroll reveals
+   ============================================================ */
+.an{opacity:0;transform:translateY(16px);box-shadow:0 0 0 var(--ink)}
+html.ready .an{opacity:1;transform:none;
+  transition:opacity .5s linear var(--d,0ms),transform .6s cubic-bezier(.18,.9,.22,1) var(--d,0ms),box-shadow .45s linear calc(var(--d,0ms) + 120ms)}
+.rv{opacity:0;transform:translateY(20px)}
+.rv.in{opacity:1;transform:none;transition:opacity .5s linear,transform .55s cubic-bezier(.18,.9,.22,1)}
+#feed.in .pcell{animation:cellin .38s cubic-bezier(.18,.9,.22,1) both;animation-delay:var(--cd,0ms)}
+@keyframes cellin{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .an,.rv{opacity:1!important;transform:none!important}
+  .tick-row{animation:none!important;width:auto;flex-wrap:wrap}
+  .tick{overflow:visible}
+  #feed .pcell{animation:none!important;opacity:1!important;transform:none!important}
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1180px){
+  .hero-grid{grid-template-columns:minmax(0,1fr)}
+  .pf{max-width:520px;width:auto;justify-self:stretch}
+  .about-grid{grid-template-columns:minmax(0,1fr)}
+  .mark-list{max-width:520px}
+  .foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:1000px){
+  .feed{grid-template-columns:minmax(0,1fr)}
+  .ri,.two,.zh-grid,.contact{grid-template-columns:minmax(0,1fr)}
+  .grp{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .zh-crit{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  :root{--bd:2.5px;--sh:4px;--sh-hi:6px}
+  .pad-live{display:none}
+  .aw{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"i d" "b b";row-gap:8px}
+  .aw-i{grid-area:i}.aw-d{grid-area:d}.aw-b{grid-area:b}
+  .aw-d{font-size:11px}
+  .recruit{grid-template-columns:minmax(0,1fr)}
+  .stamp{justify-self:start}
+  .foot-grid{grid-template-columns:minmax(0,1fr)}
+  .mod-hd .coord{display:none}
+  .wl-grid{grid-template-columns:repeat(auto-fill,minmax(84px,1fr))}
+}
+@media (max-width:520px){
+  .grp,.zh-crit{grid-template-columns:minmax(0,1fr)}
+  .pad-txt span{display:none}
+  .kind{min-width:0;flex:1 1 100%;border-right:0;border-bottom:var(--bd) solid var(--ink)}
+  .kinds .kind:last-child{border-bottom:0}
+  .array-hd .ah{flex:1 1 100%;border-left:0!important;border-bottom:2px solid var(--ink-2)}
+}
+</style>
 </head>
 <body>
-<!-- Fixed Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
-<div class="container">
-<a class="navbar-brand" href="#">B. Y.<br>
-</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav">
-<ul class="navbar-nav ms-auto">
-<li class="nav-item">
-<a class="nav-link" href="#RI">Research <br>
-</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="https://bonany.cc/cv.html">CV<br>
-</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="https://bonany.cc/pub.html">Publication<br>
-</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#teaching">Teaching<br>
-</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="https://bonany.cc/works.html">Works<br>
-</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="https://bonany.cc/group.html">Group<br>
-</a>
-</li>
-</ul>
-</div>
-</div>
-</nav>
+<a class="skip" href="#main">Skip to content</a>
 
-<header>
-<div class="container">
-<img src="asset/img/bn.png" width="175" height="175" alt="" style="border-radius: 50%; object-fit: cover;";/>
-<h1>Bonan Yan</h1>
-</div>
-
+<!-- ============ BOND-PAD HEADER ============ -->
+<header id="hdr">
+  <div class="hdr-in">
+    <div class="pad-id">
+      <span class="pad-mark" aria-hidden="true">BY</span>
+      <span class="pad-txt">
+        <b>Bonan&nbsp;Yan <span lang="zh-Hans">燕博南</span></b>
+        <span>PKU · IAI · CIM/AGI SILICON</span>
+      </span>
+    </div>
+    <nav class="pads" id="pads" aria-label="Modules"></nav>
+    <span class="pad-live" id="padLive">ARRAY 61/61</span>
+  </div>
 </header>
 
-<div class="container">
-<section class="section" id="RI">
-<h2>About Me</h2>
+<main id="main" tabindex="-1">
+<!-- ============ HERO ============ -->
+<section class="hero" id="U0" aria-labelledby="h1name">
+  <svg class="hero-xbar" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <defs>
+      <pattern id="xbar" width="46" height="46" patternUnits="userSpaceOnUse">
+        <path d="M0 0H46M0 0V46" fill="none" stroke="#0E0E18" stroke-width="1" opacity=".14"/>
+        <rect x="0" y="0" width="5" height="5" fill="#0664E7" opacity=".30"/>
+        <rect x="23" y="23" width="3" height="3" fill="#CB0E81" opacity=".26"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#xbar)"/>
+  </svg>
 
-<p>Prof. Bonan Yan (燕博南), Ph.D. is an Assistant Professor at Institute for Artificial Intelligence, Peking University. He received his Ph.D. degree in Electrical and Computer Engineering from Duke University in 2020. His research focuses on artificial general intelligence processor chip design and integrated circuits design for emerging memory and computing-in-memory--primarily targeting at SRAM, RRAM, MRAM, PCM, flexible electronics, and monolithic 3D integration. He has published papers in top-tier international journals and conferences, including Nature, Nature Electronics, Nature Communications, ISSCC, IEDM and DAC. He was awarded the ACM SIGDA Outstanding New Faculty Award in 2024 and the CCF-Huawei Populus Euphratica Forest Fund Outstanding Proposal Award in Memory Systems from China Computer Federation (CCF). He serves as a TPC member for DAC, DATE, EDTM, etc.. His team developed a digital SRAM-based computing-in-memory AI processor chip that set a new world record for computing-in-memory energy efficiency at the time of its release. He is the co-inventor of first WASM hardware acceleartor processor and first fully-flexible compute-in-memory LSI chip.</p>
+  <div class="wrap hero-in">
+    <div class="hero-grid">
+      <div class="hero-l">
+        <p class="eyebrow an" style="--d:60ms">
+          <span>Assistant Professor</span>
+          <span>Institute for Artificial Intelligence · Peking University</span>
+        </p>
+
+        <h1 class="name an" id="h1name" style="--d:130ms">
+          <span class="l1">Bonan</span>
+          <span class="l2">Yan</span>
+        </h1>
+
+        <p class="cjk-name an" style="--d:200ms">
+          <b lang="zh-Hans">燕博南</b>
+          <em>Ph.D. · Compute-in-Memory · AGI Processor Silicon</em>
+        </p>
+
+        <p class="role an" style="--d:260ms">
+          Assistant Professor, <b>Institute for Artificial Intelligence</b>, Peking University.
+        </p>
+      </div>
+
+      <!-- PORTRAIT: base64 portrait_clean_640 · COLOUR · one clean geometric frame · no filters -->
+      <div class="pf an" style="--d:190ms">
+        <div class="pf-panel">
+          <div class="pf-mat">
+            <img id="portrait" width="640" height="640" alt="Portrait of Bonan Yan" decoding="async">
+          </div>
+        </div>
+        <div class="pf-cap">
+          <span class="pf-tag">Bonan Yan, Ph.D.</span>
+          <span class="pf-tag alt" lang="zh-Hans">燕博南</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section" id="research">
-<h2>Research Interests</h2>
-<div class="education-item">
-<div class="degree">Processing-In-Memory Circuits and Systems</div>
-<div class="institution">Circuit Design,&nbsp;Domain-Specific/General Architecture</div>
-<div class="coursework-list">
-<div class="coursework-list">
-<ul>
-<li>SRAM</li>
-<li>RRAM</li>
-<li>PCM</li>
-<li>MRAM</li>
-</ul>
-</div>
-</div>
+<!-- ============ RESEARCH-DIRECTION TICKER ============ -->
+<div class="tick" id="tick" aria-hidden="true"><div class="tick-row" id="tickRow"></div></div>
 
-<div class="education-item">
-<div class="degree">Artificial General Intelligent (AGI) Processors</div>
-<div class="institution">Perception,&nbsp;Reasoning,&nbsp;Cognition,&nbsp;Massive Multi-Agents Reinforcement Learning</div>
-<div class="coursework-list">
-<ul>
-<li>Deep Learning</li>
-<li>LLM</li>
-<li>Computer Vision</li>
-<li>Probabilitic Computing</li>
-</ul>
-</div>
-</div>
+<!-- ============ U1 ABOUT ============ -->
+<section class="mod v" id="U1" aria-labelledby="h-about">
+  <div class="wrap">
+    <div class="mod-hd rv">
+      <span class="uid">U1</span>
+      <h2 id="h-about">About</h2>
+      <span class="coord">WL01 · BL00 · DIE 01</span>
+    </div>
+    <div class="mod-body about-grid">
+      <div class="panel rv">
+        <div class="about-body">
+          <p class="drop">Prof. Bonan Yan (<span lang="zh-Hans">燕博南</span>), Ph.D. is an Assistant Professor at Institute for Artificial Intelligence, Peking University. He received his Ph.D. degree in Electrical and Computer Engineering from Duke University in 2020. His research focuses on artificial general intelligence processor chip design and integrated circuits design for emerging memory and computing-in-memory—primarily targeting at SRAM, RRAM, MRAM, PCM, flexible electronics, and monolithic 3D integration.</p>
+          <p>He has published papers in international journals and conferences, including <b>Nature</b>, <b>Nature Electronics</b>, <b>Nature Communications</b>, <b>ISSCC</b>, <b>IEDM</b> and <b>DAC</b>. He was awarded the ACM SIGDA Outstanding New Faculty Award in 2024 and the CCF-Huawei Populus Euphratica Forest Fund Outstanding Proposal Award in Memory Systems from China Computer Federation (CCF). He serves as a TPC member for DAC, DATE, EDTM, etc..</p>
+          <p>His team developed a digital SRAM-based computing-in-memory AI processor chip. He is a co-inventor of a WASM hardware accelerator processor and a fully-flexible compute-in-memory LSI chip.</p>
+        </div>
+      </div>
+      <aside class="mark-list rv" aria-label="Typographic institution marks">
+        <h3>Institution marks</h3>
+        <ul>
+          <li><i>01</i>Peking University<em>2020.11–</em></li>
+          <li><i>02</i>Duke University<em>Ph.D. 2020</em></li>
+          <li><i>03</i>Univ. of Pittsburgh<em>M.S. 2017</em></li>
+          <li><i>04</i>Beihang University<em>B.S. 2014</em></li>
+          <li><i>05</i>ACM SIGDA<em>TPC · DAC/DATE/EDTM</em></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
 </section>
 
-
-
-<section class="section" id="teaching">
-<h2>Teaching</h2>
-<div class="skills-grid">
-<div class="skill-category">
-<h4>&nbsp;Undergraduate</h4>
-<ul>
-<li>Digital Logic (Experimental Class)[<a href="https://bonany.cc/digital_logic_lab/">26’spring</a>]</li>
-<li>Artificial Intelligence & Integrated Circuits (Tong Class) [<a href="https://bonany.cc/aichip2023/">23’fall</a>]</li>
-<li>Introduction to AI Chip Design [<a href="https://bonany.cc/aiic2023/">23’fall</a>]</li>
-</ul>
-</div>
-
-<div class="skill-category">
-<h4>Graduate</h4>
-<ul>
-<li>Artificial Intelligence Chips: Design & Practice [<a href="https://bonany.cc/adap25/">25’fall</a>]</li>
-<li>Embedded System Programming & Practice [<a href="https://bonany.cc/esp25/">25’fall</a>]</li>
-</ul>
-</div>
-</div>
+<!-- ============ U2 RESEARCH ============ -->
+<section class="mod a" id="U2" aria-labelledby="h-ri">
+  <div class="wrap">
+    <div class="mod-hd rv">
+      <span class="uid">U2</span>
+      <h2 id="h-ri">Research Interests</h2>
+      <span class="coord">WL02 · BL01 · 2 BLOCKS</span>
+    </div>
+    <div class="mod-body ri">
+      <article class="ri-b k1 rv">
+        <span class="ri-n">Block 01 / Memory</span>
+        <h3>Processing-In-Memory Circuits and Systems</h3>
+        <p class="ri-sub">Circuit Design, Domain-Specific/General Architecture</p>
+        <p class="ri-chips-lab">chips</p>
+        <div class="chips">
+          <span class="chip">SRAM</span><span class="chip">RRAM</span>
+          <span class="chip">PCM</span><span class="chip">MRAM</span>
+        </div>
+      </article>
+      <article class="ri-b k2 rv">
+        <span class="ri-n">Block 02 / Intelligence</span>
+        <h3>Artificial General Intelligent (AGI) Processors</h3>
+        <p class="ri-sub">Perception, Reasoning, Cognition, Massive Multi-Agents Reinforcement Learning</p>
+        <p class="ri-chips-lab">chips</p>
+        <div class="chips">
+          <span class="chip">Deep Learning</span><span class="chip">LLM</span>
+          <span class="chip">Computer Vision</span><span class="chip">Probabilitic Computing</span>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
 
-<section class="section" id="contact">
-<h2>⭐️⭐️⭐️⭐️⭐️</h2>
-<div class="contact-info">
-<div class="contact-item">
-<strong>Email:</strong><br>
-bonanyan AT pku DOT edu DOT cn </div>
-<div class="contact-item">
-<strong>Google Scholar</strong><br>
-<a href="https://scholar.google.com/citations?user=oN9gwMIAAAAJ&hl=en">link</a>
-</div>
-<div class="contact-item">
-<strong>Copyrights</strong><br>
-All rights reserved.
-</div>
-</div>
+<!-- ============ U3 EDUCATION + U4 WORK ============ -->
+<section class="mod" id="U3" aria-labelledby="h-edu">
+  <div class="wrap">
+    <div class="mod-hd rv">
+      <span class="uid">U3</span>
+      <h2 id="h-edu">Education</h2>
+      <span class="coord">WL03 · BL02 · 3 ENTRIES</span>
+    </div>
+    <div class="mod-body">
+      <ul class="rows rv">
+        <li>
+          <div class="r-top"><span class="r-i">ED-01</span><span class="r-d">2017.8 – 2020.11</span></div>
+          <h3>Ph.D. in Electrical &amp; Computer Engineering</h3>
+          <p class="r-org"><span class="inst">Duke University</span></p>
+          <p class="r-meta">Advisors: Prof. Hai Li, Prof. Yiran Chen</p>
+        </li>
+        <li>
+          <div class="r-top"><span class="r-i">ED-02</span><span class="r-d">2014.8 – 2017.4</span></div>
+          <h3>M.S. in Electrical Engineering</h3>
+          <p class="r-org"><span class="inst">University of Pittsburgh</span> · Pittsburgh, PA, USA</p>
+          <p class="r-meta">Advisors: Prof. Hai Li, Prof. Yiran Chen</p>
+        </li>
+        <li>
+          <div class="r-top"><span class="r-i">ED-03</span><span class="r-d">2010.9 – 2014.7</span></div>
+          <h3>B.S. in Electrical &amp; Information Engineering</h3>
+          <p class="r-org"><span class="inst">Beihang University</span> · Beijing, China</p>
+          <p class="r-meta">Undergraduate Research Advisor: Prof. Weisheng Zhao</p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </section>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<section class="mod m" id="U4" aria-labelledby="h-work">
+  <div class="wrap">
+    <div class="mod-hd rv">
+      <span class="uid">U4</span>
+      <h2 id="h-work">Work Experience</h2>
+      <span class="coord">WL04 · BL03 · 1 ENTRY</span>
+    </div>
+    <div class="mod-body">
+      <ul class="rows rv">
+        <li>
+          <div class="r-top"><span class="r-i">WK-01</span><span class="r-d">2020.11 – Present</span></div>
+          <h3>Tenure-Track Assistant Professor</h3>
+          <p class="r-org"><span class="inst">Peking University</span></p>
+          <div class="tagrow"><span class="tg">AGI Processor</span><span class="tg">VLSI Design</span><span class="tg">Computer Architecture</span><span class="tg">Hardware Cognitive Architecture</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ U5 AWARDS ============ -->
+<section class="mod" id="U5" aria-labelledby="h-aw">
+  <div class="wrap">
+    <div class="mod-hd rv">
+      <span class="uid">U5</span>
+      <h2 id="h-aw">Awards</h2>
+      <span class="coord">WL05 · BL04 · 11 ITEMS</span>
+    </div>
+    <div class="mod-body">
+      <ol class="aw-ledger rv">
+        <li class="aw"><span class="aw-i">AW-01</span><div class="aw-b"><h3>ACM SIGDA Outstanding New Faculty Award</h3><p class="aw-org">Association for Computing Machinery (ACM)</p></div><span class="aw-d">Jun. 2024</span></li>
+        <li class="aw"><span class="aw-i">AW-02</span><div class="aw-b"><h3>DATE Outstanding Reviewer Award</h3><p class="aw-org">Design, Automation and Test in Europe Conference (DATE)</p></div><span class="aw-d">Mar. 2025</span></li>
+        <li class="aw"><span class="aw-i">AW-03</span><div class="aw-b"><h3>Peking University Weiming Young Fellow</h3><p class="aw-org">Peking University Education Foundation</p></div><span class="aw-d">Jan. 2024</span></li>
+        <li class="aw"><span class="aw-i">AW-04</span><div class="aw-b"><h3>Peking University Boya Young Fellow</h3><p class="aw-org">Peking University</p></div><span class="aw-d">Oct. 2023</span></li>
+        <li class="aw"><span class="aw-i">AW-05</span><div class="aw-b"><h3>CCF-Huawei Huyanglin Fund Outstanding Project Award</h3><p class="aw-org">China Computer Federation (CCF)</p></div><span class="aw-d">May 2022</span></li>
+        <li class="aw"><span class="aw-i">AW-06</span><div class="aw-b"><h3>Teaching Achievement Award, Second Prize</h3><p class="aw-org">Peking University</p></div><span class="aw-d">Oct. 2025</span></li>
+        <li class="aw"><span class="aw-i">AW-07</span><div class="aw-b"><h3>Outstanding Case in Undergraduate Curriculum Development for AI-Integrated Majors</h3><p class="aw-org">Peking University</p></div><span class="aw-d">Top 20% · Oct. 2025</span></li>
+        <li class="aw"><span class="aw-i">AW-08</span><div class="aw-b"><h3>2024 Undergraduate Teaching Reform Project (Outstanding Grade)</h3><p class="aw-org">Peking University</p></div><span class="aw-d">Apr. 2025</span></li>
+        <li class="aw"><span class="aw-i">AW-09</span><div class="aw-b"><h3>Outstanding Tutor Award</h3><p class="aw-org">International Symposium of Integrated Circuits (ISIC)</p></div><span class="aw-d">Jul. 2023</span></li>
+        <li class="aw"><span class="aw-i">AW-10</span><div class="aw-b"><h3>Teaching Contest for Young Faculties, Second Prize</h3><p class="aw-org">Peking University · Science and Technology Track</p></div><span class="aw-d">Mar. 2023</span></li>
+        <li class="aw"><span class="aw-i">AW-11</span><div class="aw-b"><h3>Best Teaching Demonstration Award</h3><p class="aw-org">Peking University</p></div><span class="aw-d">Mar. 2023</span></li>
+      </ol>
+      <p class="aw-note rv">11 / 11 items · verbatim CV order</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ U6 TEACHING ============ -->
+<section class="mod v" id="U6" aria-labelledby="h-teach">
+  <div class="wrap">
+    <div class="mod-hd rv">
+      <span class="uid">U6</span>
+      <h2 id="h-teach">Teaching</h2>
+      <span class="coord">WL06 · BL05 · 5 COURSES</span>
+    </div>
+    <div class="mod-body">
+      <p class="grp-lab rv"><b>Undergraduate</b><i></i></p>
+      <div class="course-grid rv">
+        <article class="course">
+          <span class="term">26'spring</span>
+          <h3>Digital Logic (Experimental Class)</h3>
+          <span class="lvl">Undergraduate</span>
+          <a class="go" href="https://bonany.cc/digital_logic_lab/" target="_blank" rel="noopener noreferrer">Course site <span>bonany.cc/digital_logic_lab/</span></a>
+        </article>
+        <article class="course">
+          <span class="term">23'fall</span>
+          <h3>Artificial Intelligence &amp; Integrated Circuits (Tong Class)</h3>
+          <span class="lvl">Undergraduate</span>
+          <a class="go" href="https://bonany.cc/aichip2023/" target="_blank" rel="noopener noreferrer">Course site <span>bonany.cc/aichip2023/</span></a>
+        </article>
+        <article class="course">
+          <span class="term">23'fall</span>
+          <h3>Introduction to AI Chip Design</h3>
+          <span class="lvl">Undergraduate</span>
+          <a class="go" href="https://bonany.cc/aiic2023/" target="_blank" rel="noopener noreferrer">Course site <span>bonany.cc/aiic2023/</span></a>
+        </article>
+      </div>
+
+      <p class="grp-lab rv" style="margin-top:clamp(20px,2.4vw,32px)"><b>Graduate</b><i></i></p>
+      <div class="course-grid rv">
+        <article class="course">
+          <span class="term">25'fall</span>
+          <h3>Artificial Intelligence Chips: Design &amp; Practice</h3>
+          <span class="lvl">Graduate</span>
+          <a class="go" href="https://bonany.cc/adap25/" target="_blank" rel="noopener noreferrer">Course site <span>bonany.cc/adap25/</span></a>
+        </article>
+        <article class="course">
+          <span class="term">25'fall</span>
+          <h3>Embedded System Programming &amp; Practice</h3>
+          <span class="lvl">Graduate</span>
+          <a class="go" href="https://bonany.cc/esp25/" target="_blank" rel="noopener noreferrer">Course site <span>bonany.cc/esp25/</span></a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ U7 PUBLICATIONS ============ -->
+<section class="mod a" id="U7" aria-labelledby="h-pub">
+  <div class="wrap">
+    <div class="mod-hd rv">
+      <span class="uid">U7</span>
+      <h2 id="h-pub">Publications</h2>
+      <span class="coord">WL07 · BL06 · 61 CELLS</span>
+    </div>
+
+    <div class="mod-body">
+      <!-- BITCELL ARRAY: venue wordlines -->
+      <div class="array rv">
+        <div class="array-hd">
+          <span class="ah">Memory array <b>61 × 1</b></span>
+          <span class="ah">Wordlines <b id="wlN">38</b></span>
+          <span class="ah grow">Select a venue wordline to program the feed <b id="wlSel">— ALL —</b></span>
+        </div>
+        <div class="kinds" role="group" aria-label="Publication type filter">
+          <button type="button" class="kind" data-kind="all" aria-pressed="true">All <em id="cAll">61</em></button>
+          <button type="button" class="kind" data-kind="j" aria-pressed="false">Journals <em id="cJ">23</em></button>
+          <button type="button" class="kind" data-kind="c" aria-pressed="false">Conferences <em id="cC">38</em></button>
+          <button type="button" class="kind reset" id="resetBtn">Reset array</button>
+        </div>
+        <div class="wlwrap">
+          <p class="wl-lab"><b>Venue wordlines</b><i></i></p>
+          <div class="wl-grid" id="wlGrid" role="group" aria-label="Venue filter"></div>
+        </div>
+      </div>
+
+      <!-- CARD FEED -->
+      <div class="feed-hd rv">
+        <h3>Cell feed</h3>
+        <div class="readout">
+          <span class="ro">Showing <b id="nShow">61</b> / 61</span>
+          <span class="ro alt" id="roState">Wordline: all</span>
+        </div>
+      </div>
+      <div class="feed rv" id="feed" aria-live="polite"></div>
+      <p class="feed-end rv" id="feedEnd">End of array · 61 cells · titles &amp; full author lists all present in the DOM</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ U8 SOFTWARE ============ -->
+<section class="mod" id="U8" aria-labelledby="h-sw">
+  <div class="wrap">
+    <div class="mod-hd rv">
+      <span class="uid">U8</span>
+      <h2 id="h-sw">Software</h2>
+      <span class="coord">WL08 · BL07 · 3 PROJECTS</span>
+    </div>
+    <div class="mod-body sw">
+      <article class="swcard rv">
+        <span class="sn">SW-01 · Open source</span>
+        <h3>PISLB</h3>
+        <p>open-source PIM macro Verilog/Chisel behavioral model library</p>
+        <a href="https://bonany.gitlab.io/pis/" target="_blank" rel="noopener noreferrer">bonany.gitlab.io/pis/</a>
+      </article>
+      <article class="swcard rv">
+        <span class="sn">SW-02 · LLM accelerator</span>
+        <h3>AttentionLego</h3>
+        <p>vanilla self-attention block for large language model accelerators</p>
+        <a href="https://bonany.cc/attentionlego/" target="_blank" rel="noopener noreferrer">bonany.cc/attentionlego/</a>
+      </article>
+      <article class="swcard rv">
+        <span class="sn">SW-03 · Probabilistic circuits</span>
+        <h3>Pyjuice</h3>
+        <p>probabilistic circuits — Beihang University, Beijing, China (collaboration with Dr. Anji Liu)</p>
+        <a href="https://liuanji.github.io" target="_blank" rel="noopener noreferrer">liuanji.github.io</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ U9 HINTS ============ -->
+<section class="mod m" id="U9" aria-labelledby="h-hints">
+  <div class="wrap">
+    <div class="mod-hd rv">
+      <span class="uid">U9</span>
+      <h2 id="h-hints">Hints</h2>
+      <span class="coord">WL09 · BL08 · 3 NOTES</span>
+    </div>
+    <div class="mod-body sw">
+      <article class="swcard hint rv">
+        <span class="sn">HT-01</span>
+        <h3>How to achieve success in your PhD career?</h3>
+        <p class="q">「Let them help you!」</p>
+        <a href="https://bonany.cc/asset/phdguide.md" target="_blank" rel="noopener noreferrer">notes — bonany.cc/asset/phdguide.md</a>
+      </article>
+      <article class="swcard hint rv">
+        <span class="sn">HT-02</span>
+        <h3>You and Your Research</h3>
+        <p class="q">Great talk of Richard W. Hamming (Hamming code's inventor)</p>
+        <a href="https://bonany.cc/asset/youandyourresearch.md" target="_blank" rel="noopener noreferrer">here — bonany.cc/asset/youandyourresearch.md</a>
+      </article>
+      <article class="swcard hint rv">
+        <span class="sn">HT-03</span>
+        <h3>Use Verilator to accelerate simlation of verilog hdl?</h3>
+        <p class="q">Useful tool :D</p>
+        <a href="https://bonany.cc/asset/verilatorverilog.md" target="_blank" rel="noopener noreferrer">here — bonany.cc/asset/verilatorverilog.md</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ U10 GROUP ============ -->
+<section class="mod n" id="U10" aria-labelledby="h-grp">
+  <div class="wrap">
+    <div class="mod-hd rv">
+      <span class="uid">U10</span>
+      <h2 id="h-grp">Group</h2>
+      <span class="coord">WL10 · BL09 · 3 × 3 MACRO ARRAY</span>
+    </div>
+    <div class="mod-body">
+      <p class="grp-lab rv"><b>Current Group Members · 9</b><i></i></p>
+      <div class="grp">
+        <article class="mem rv"><span class="yr">2021</span><span class="yrl">Ph.D. career starts in</span><h3>Wenshuo Yue</h3><p>memristor-based compute-in-memory for graph processing</p></article>
+        <article class="mem rv"><span class="yr">2022</span><span class="yrl">Ph.D. career starts in</span><h3>Anjunyi Fan</h3><p>SRAM compute-in-memory microarchitecture</p></article>
+        <article class="mem rv"><span class="yr">2022</span><span class="yrl">Ph.D. career starts in</span><h3>Daijing Shi</h3><p>RRAM compute-in-memory IC design</p></article>
+        <article class="mem rv"><span class="yr">2023</span><span class="yrl">Ph.D. career starts in</span><h3>Yihan Fu</h3><p>probabilistic computing IC Design</p></article>
+        <article class="mem rv"><span class="yr">2023</span><span class="yrl">Ph.D. career starts in</span><h3>Hongxiao Zhao</h3><p>cognitive architecture processor</p></article>
+        <article class="mem rv"><span class="yr">2024</span><span class="yrl">Ph.D. career starts in</span><h3>Qiuping Wu</h3><p>WASM processor</p></article>
+        <article class="mem rv"><span class="yr">2024</span><span class="yrl">Ph.D. career starts in</span><h3>Juchen Zhou</h3><p>intelligent sensing &amp; processing</p></article>
+        <article class="mem rv"><span class="yr">2025</span><span class="yrl">Ph.D. career starts in</span><h3>Jiayi Li</h3><p>reinforcement learning processor</p></article>
+        <article class="mem rv"><span class="yr">2025</span><span class="yrl">Ph.D. career starts in</span><h3>Jiaqi Yang</h3><p>3D integrated circuit design &amp; architecture</p></article>
+      </div>
+
+      <div class="recruit rv">
+        <span class="stamp">2027<br>Full</span>
+        <div class="rt">
+          <b>Recruit</b>
+          <p>The enrollment quota for recruit in 2027 is full</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ U11 ADVICE 中文 ============ -->
+<section class="mod zh v" id="U11" aria-labelledby="h-adv">
+  <div class="wrap">
+    <div class="mod-hd rv">
+      <span class="uid">U11</span>
+      <h2 id="h-adv">Advice · <span lang="zh-Hans">给同学的建议</span></h2>
+      <span class="coord">WL11 · BL10 · 中文</span>
+    </div>
+    <div class="mod-body">
+      <div class="panel rv">
+        <div class="zh-body">
+          <div class="zh-grid">
+            <div class="zh-stage">
+              <h3 lang="zh-Hans">本科一年级或以下</h3>
+              <p lang="zh-Hans">请认真上课。</p>
+            </div>
+            <div class="zh-stage">
+              <h3 lang="zh-Hans">本科二年级</h3>
+              <p lang="zh-Hans">想体验research的二年级同学，建议在大二下（春季学期）五一假之前联系我，可以立项「本研训练项目」。</p>
+            </div>
+            <div class="zh-stage full">
+              <h3 lang="zh-Hans">本科三年级</h3>
+              <p lang="zh-Hans">欢迎想保研的同学来陶瓷，陶瓷信发这里<span class="mail">bonanyan[at]pku[dot]edu[dot]cn</span>，告诉我你有多强+想研究的方向。据往年经验竞争会比较激烈，请务必在三年级尽早联系，越早越好。我的考核方式是会分配一个小的project一起研究一下，这个过程来双向选择一下。</p>
+            </div>
+          </div>
+
+          <p lang="zh-Hans" style="margin-top:22px"><strong style="font-family:var(--disp);font-size:15px;letter-spacing:.14em;text-transform:uppercase;background:var(--ink);color:var(--acid);padding:6px 11px;border:2px solid var(--ink);display:inline-block">招生标准</strong></p>
+          <div class="zh-crit">
+            <div class="crit"><b lang="zh-Hans">有兴趣</b><span>Criterion 01</span><p lang="zh-Hans">花大量时间在研究（学习、适应、思考、动手）上</p></div>
+            <div class="crit"><b lang="zh-Hans">有进展</b><span>Criterion 02</span><p lang="zh-Hans">以隔周为单位，有显著进展；肯下手一点一点实现（所谓的「keep your hands dirty」），而不是只想不做</p></div>
+            <div class="crit"><b lang="zh-Hans">有交流</b><span>Criterion 03</span><p lang="zh-Hans">遇到极小困难自己google，遇到小到中等困难自己解决，遇到重大困难第一时间跟我说一起寻求解决方案；我平常杂事比较多，需要每周催我排时间和你一对一meet</p></div>
+            <div class="crit"><b lang="zh-Hans">有想法</b><span>Criterion 04</span><p lang="zh-Hans">遇到困难，从最naive到最花里胡哨可以提出各种可能的解决方案，实在手足无措的时候才算是「重大困难」（重大困难一定要尽早约我一对一meet讨论解决方案）</p></div>
+          </div>
+
+          <div class="zh-grid" style="margin-top:22px">
+            <div class="zh-stage">
+              <h3 lang="zh-Hans">本科四年级</h3>
+              <p lang="zh-Hans">本科四年级是工作或者读研第0年，一定要珍惜可以加油的机会！去跟着未来老板或导师学习吧</p>
+            </div>
+            <div class="zh-stage">
+              <h3 lang="zh-Hans">硕士研究生同学</h3>
+              <p lang="zh-Hans">在导师明确同意的情况下，欢迎研究生同学来找我一起research，邮件我你的情况<span class="mail">bonanyan[at]pku[dot]edu[dot]cn</span>。</p>
+            </div>
+            <div class="zh-stage full">
+              <h3 lang="zh-Hans">怎么确定我喜欢您的研究兴趣？</h3>
+              <p lang="zh-Hans">我的研究的重要性总体逻辑：存算一体通用人工智能芯片。先读一下这两篇文章，看看是不是喜欢：<a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/aisy.201900068" target="_blank" rel="noopener noreferrer">我写的一篇综述</a>、<a href="https://www.nature.com/articles/s41586-022-04992-8" target="_blank" rel="noopener noreferrer">一篇经典文章</a>。再看一下我这里的两个demo，看看是不是有自己想做一套的冲动：<a href="https://www.bilibili.com/video/BV1Ba4y1s7m1/" target="_blank" rel="noopener noreferrer">RRAM CIM Chip Demo</a>、<a href="https://www.bilibili.com/video/BV1fu411s7Z1" target="_blank" rel="noopener noreferrer">SRAM CIM Chip Demo</a></p>
+              <div class="zh-links">
+                <a class="zl" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/aisy.201900068" target="_blank" rel="noopener noreferrer"><i>Read 01</i>我写的一篇综述</a>
+                <a class="zl" href="https://www.nature.com/articles/s41586-022-04992-8" target="_blank" rel="noopener noreferrer"><i>Read 02</i>一篇经典文章</a>
+                <a class="zl" href="https://www.bilibili.com/video/BV1Ba4y1s7m1/" target="_blank" rel="noopener noreferrer"><i>Demo 01</i>RRAM CIM Chip Demo</a>
+                <a class="zl" href="https://www.bilibili.com/video/BV1fu411s7Z1" target="_blank" rel="noopener noreferrer"><i>Demo 02</i>SRAM CIM Chip Demo</a>
+              </div>
+            </div>
+            <div class="zh-stage full">
+              <h3 lang="zh-Hans">组内正在进行的工作方向</h3>
+              <div class="zh-dir">
+                <span>Cognitive Architecture Processor</span>
+                <span>Massive Multi-Agent Simulation Processor</span>
+                <span>Probabilistic Circuits ASIC Processor</span>
+                <span>RRAM Compute-In-Memory Design</span>
+                <span>Digital SRAM Compute-In-Memory Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ U12 CONTACT ============ -->
+<section class="mod" id="U12" aria-labelledby="h-contact">
+  <div class="wrap">
+    <div class="mod-hd rv">
+      <span class="uid">U12</span>
+      <h2 id="h-contact">Contact</h2>
+      <span class="coord">WL12 · BL11 · CIM READOUT</span>
+    </div>
+    <div class="mod-body contact">
+      <div class="cim rv">
+        <p class="cim-hd">Compute-in-memory readout <em id="cimState">IDLE · operands in cells</em></p>
+        <div class="cim-body">
+          <p class="lab" style="color:var(--acid);margin-bottom:10px">Email operands (obfuscated at rest)</p>
+          <div class="cells">
+            <span class="cell">bonanyan</span><span class="cell op">[at]</span>
+            <span class="cell">pku</span><span class="cell op">[dot]</span>
+            <span class="cell">edu</span><span class="cell op">[dot]</span>
+            <span class="cell">cn</span>
+          </div>
+          <div class="cim-row">
+            <button type="button" class="btn" id="mailBtn">Compute ▸ read out address</button>
+            <button type="button" class="btn ghost" id="copyBtn">Copy email</button>
+          </div>
+          <p class="reg" id="mailReg" aria-live="polite"><span class="rl">Result register</span><span id="mailVal">— — — — —</span></p>
+        </div>
+      </div>
+
+      <div class="cside">
+        <a class="slink rv" href="https://scholar.google.com/citations?user=oN9gwMIAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">
+          <i>External</i>
+          <b>Google Scholar</b>
+          <span>scholar.google.com/citations?user=oN9gwMIAAAAJ&amp;hl=en</span>
+        </a>
+        <div class="panel rv" style="box-shadow:var(--sh) var(--sh) 0 var(--blue)">
+          <p class="lab" style="color:var(--ink-2);margin-bottom:9px">Postal / affiliation</p>
+          <p style="font-family:var(--disp);font-weight:700;font-size:16px;line-height:1.35;text-transform:uppercase">
+            Institute for Artificial Intelligence<br>Peking University
+          </p>
+          <p style="margin-top:10px;font-size:14.5px;line-height:1.55">
+            Prospective Ph.D. and undergraduate applicants: read <a href="#U11">U11 · Advice</a> first —
+            the 2027 enrollment quota is full.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="bigname">Bonan<br>Yan <em lang="zh-Hans">燕博南</em></p>
+        <p style="margin-top:14px;max-width:40ch">Assistant Professor, Institute for Artificial Intelligence, Peking University. AGI processor chip design and compute-in-memory integrated circuits.</p>
+      </div>
+      <div>
+        <h4>Die modules</h4>
+        <ul id="footNav"></ul>
+      </div>
+      <div>
+        <h4>Colophon</h4>
+        <p>Display &amp; body: Asap Sharp (wdth 100). CJK: Noto Sans SC. Tokens: Space Mono.</p>
+        <p style="margin-top:9px">Construction: 3px ink borders, hard 4–6px offset shadows, near-zero radius, flat clashing colour blocks. No gradients.</p>
+        <div class="swatches" aria-hidden="true">
+          <i style="background:#0664E7"></i><i style="background:#EBF345"></i><i style="background:#CB0E81"></i><i style="background:#0E0E18"></i><i style="background:#0A1630"></i><i style="background:#FCFAF3"></i>
+        </div>
+      </div>
+    </div>
+    <div class="cright">
+      <p>© Bonan Yan · <b>All rights reserved.</b></p>
+      <p>Copyrights: All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
 <script>
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-e.preventDefault();
+/* =========================================================
+   d8 · VERGE NEO-BRUTALISM — behaviour layer
+   ========================================================= */
+const PUBS = [{"tag":"Nature","title":"A Flexible Digital Compute-In-Memory Chip For Edge Intelligence","venue":"Nature","authors":"Anzhi Yan, Jianlan Yan, Penghui Shen, Yihan Fu, Enyi Zhang, Jingkai Song, Qinghang Zhang, Ziqi He, Xin Li, Zecheng Pan, Ding Li, Yu Dong, Xiaowei Xu, Feng Qi, Tianqi Shao, **Bonan Yan***, Yi Yang, Houfang Liu* & Tian-Ling Ren*","link":"https://doi.org/10.1038/s41586-025-09931-x"},{"tag":"HPCA","title":"ESTroM: Element-Flow Architecture For Processing Sparse Tractable Probabilistic Models","venue":"2026 IEEE International Symposium on High Performance Computer Architecture (HPCA)","authors":"Anjunyi Fan, Xuejie Liu, Anji Liu, Qiuping Wu, Jiaqi Yang, Yuchao Qin, Guy Van den Broeck, Yitao Liang* & **Bonan Yan***","link":""},{"tag":"ASP-DAC","title":"M3DKV: Monolithic 3D Gain Cell Memory Enabled Efficient KV Cache & Processing","venue":"31st Asia and South Pacific Design Automation Conference (ASP-DAC)","authors":"Jiaqi Yang, Yanbo Su, Yihan Fu, Jianshi Tang* & **Bonan Yan***","link":""},{"tag":"Nature Communications","title":"Physical Unclonable In-Memory Computing For Simultaneous Protecting Private Data And Deep Learning Models","venue":"Nature Communications","authors":"Wenshuo Yue, Kai Wu, Zhiyuan Li, Juchen Zhou, Zeyu Wang, Teng Zhang, Yuxiang Yang, Lintao Ye, Yongqin Wu, Weihai Bu, Shaozhi Wang, Xiaodong He, Xiaobing Yan, Yaoyu Tao, **Bonan Yan***, Ru Huang* & Yuchao Yang*","link":"https://www.nature.com/articles/s41467-025-56412-w"},{"tag":"HPCA","title":"PROCA: Programmable Probabilistic Processing Unit Architecture with Accept/Reject Prediction & Multicore Pipelining for Causal Inference","venue":"2025 IEEE International Symposium on High Performance Computer Architecture (HPCA)","authors":"Yihan Fu, Anjunyi Fan, Wenshuo Yue, Hongxiao Zhao, Daijing Shi, Qiuping Wu, Jiayi Li, Xiangyu Zhang, Yaoyu Tao, Yuchao Yang* & **Bonan Yan***","link":"https://ieeexplore.ieee.org/abstract/document/10946795/"},{"tag":"DATE","title":"PEARL: FPGA-Based Reinforcement Learning Acceleration with Pipelined Parallel Environments","venue":"2025 Design, Automation & Test in Europe Conference (DATE)","authors":"Jiayi Li, Hongxiao Zhao, Wenshuo Yue, Yihan Fu, Daijing Shi, Anjunyi Fan, Yuchao Yang & **Bonan Yan***","link":"https://ieeexplore.ieee.org/abstract/document/10992886/"},{"tag":"ESSERC","title":"A 40nm 48.7F2/bit 1T2R Resistive Memory Bitcell Array For Adaptive Vector-Symbolic In-Memory Computing","venue":"IEEE European Solid-State Electronics Research Conference (ESSERC)","authors":"Wenshuo Zhaokun Jing, Lintao Ye, Tianyao Xiao, Pek Jun Tiw, Yihan Fu, Yuxiang Yang, Mo Guang, Kaiwen Long, Daijing Shi, Hongxiao Zhao, Teng Zhang, **Bonan Yan***, & Yuchao Yang*","link":""},{"tag":"ICICM","title":"OpenPIM: An Open-Source Programmable Processing-In-Memory Accelerator Design & Pipeline Simulation Framework","venue":"The 10th International Conference on Integrated Circuits and Microsystems (ICICM)","authors":"Ruibao Wang, Wenshuo Yue, Daijing Shi, Yuchao Yang* & **Bonan Yan***","link":""},{"tag":"Nature Electronics","title":"A Fast and Reconfigurable Sort-in-Memory System Based on Memristors","venue":"Nature Electronics","authors":"Lianfeng Yu, Teng Zhang, Zeyu Wang, Xile Wang, Zelun Pan, Bowen Wang, Zhaokun Jing, Jiaxin Liu, Yuqi Li, Ziang Xie, Yihang Zhu, **Bonan Yan**, Yaoyu Tao* & Yuchao Yang*","link":"https://www.nature.com/articles/s41928-025-01405-2"},{"tag":"TCAD","title":"Efficient SRAM-PIM Co-design by Joint Exploration of Value-Level and Bit-Level Sparsity","venue":"IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems","authors":"Cenlin Duan, Jianlei Yang*, Yikun Wang, Yiou Wang, Yingjie Qi, Xiaolin He, **Bonan Yan**, Xueyan Wang, Xiaotao Jia & Weisheng Zhao*","link":"https://ieeexplore.ieee.org/abstract/document/11037481/"},{"tag":"Advanced Science","title":"Memristive In‐Memory Object Detection with 128 Mb C‐Doped Ge2Sb2Te5 PCM Chip","venue":"Advanced Science","authors":"Chenchen Xie, Yuqi Li, Longhao Yan, Sannian Song, Houpeng Chen, Ruijuan Qi, Xi Li, Yihang Zhu, Lianfeng Yu, **Bonan Yan**, Yaoyu Tao, Gaoming Feng, Yuchao Yang* & Zhitang Song*","link":"https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/advs.202505678"},{"tag":"Nature Electronics","title":"A Scalable Universal Ising Machine Based on Interaction-Centric Storage And Compute-In-Memory","venue":"Nature Electronics","authors":"Wenshuo Yue, Teng Zhang, Zhaokun Jing, Kai Wu, Yuxiang Yang, Zhen Yang, Yongqin Wu, Weihai Bu, Kai Zheng, Jin Kang, Yibo Lin, Yaoyu Tao, **Bonan Yan***, Ru Huang, Yuchao Yang*","link":"https://www.nature.com/articles/s41928-024-01228-7"},{"tag":"TCAS-I","title":"Probabilistic Compute-in-Memory Design For Efficient Markov Chain Monte Carlo Sampling","venue":"IEEE Transactions on Circuits and Systems I: Regular Papers","authors":"Yihan Fu, Daijing Shi, Anjunyi Fan, Wenshuo Yue, Yuchao Yang, Ru Huang, **Bonan Yan**","link":"https://ieeexplore.ieee.org/document/10347275/"},{"tag":"JSSC","title":"A 28-nm 28.8-TOPS/W Attention-Based NN Processor With Correlative CIM Ring Architecture and Dataflow-Reshaped Digital-Assisted CIM Array","venue":"IEEE Journal of Solid-State Circuits","authors":"Ruiqi Guo, Zhiheng Yue, Yang Wang, Hao Li, Te Hu, Yabing Wang, Hao Sun, Jeng-Long Hsu, Yaojun Zhang, **Bonan Yan**, Leibo Liu, Ru Huang, Shaojun Wei, Shouyi Yin","link":"https://ieeexplore.ieee.org/abstract/document/10620433"},{"tag":"Adv. Funct. Mater.","title":"Neural Architecture Search with In-Memory Multiply–Accumulate and In-Memory Rank Based on Coating Layer Optimized C-Doped Ge2Sb2Te5 Phase Change Memory","venue":"Advanced Functional Materials","authors":"Longhao Yan, Qingyu Wu, Xi Li, Chenchen Xie, Xilin Zhou, Yuqi Li, Daijing Shi, Lianfeng Yu, Teng Zhang, Yaoyu Tao, **Bonan Yan**, Min Zhong, Zhitang Song, Yuchao Yang, Ru Huang","link":"https://onlinelibrary.wiley.com/doi/abs/10.1002/adfm.202470083"},{"tag":"SCIS","title":"Memristive Dynamics Enabled Neuromorphic Computing Systems","venue":"Science China: Information Sciences","authors":"**Bonan Yan**, Yuchao Yang, Ru Huang","link":"https://link.springer.com/article/10.1007/s11432-023-3739-0"},{"tag":"GLSVLSI","title":"SRAM-Based Processing-In-Memory Design with Kullback-Leibler Divergence-Based Dynamic Precision Quantization","venue":"ACM Great Lakes Symposium on VLSI 2023","authors":"Yanjun Li, Chunshan Zu, Bingqian Wang, Zhenhua Zhu, Yaojun Zhang, Ran Duan, Bing Li, **Bonan Yan**","link":"https://dl.acm.org/doi/abs/10.1145/3583781.3590306"},{"tag":"AICAS","title":"Live Demonstration: SRAM Compute-In-Memory Based Visual & Aural Recognition System","venue":"2023 IEEE 5th International Conference on Artificial Intelligence Circuits and Systems (AICAS)","authors":"Anjunyi Fan, Bo Hu, Zhonghua Jin, Haiyue Han, Yaojun Zhang, Yue Yang, Yuchao Yang, **Bonan Yan**, Ru Huang","link":"https://ieeexplore.ieee.org/abstract/document/10168569/"},{"tag":"NCE","title":"Hadamard Product-Based In-Memory Computing Design For Floating Point Neural Network Training","venue":"Neuromorphic Computing and Engineering","authors":"Anjunyi Fan, Yihan Fu, Yaoyu Tao, Zhonghua Jin, Haiyue Han, Huiyu Liu, Yaojun Zhang, **Bonan Yan**, Yuchao Yang, Ru Huang","link":"https://iopscience.iop.org/article/10.1088/2634-4386/acbab9/meta"},{"tag":"Nature Communications","title":"Monolithic Three-Dimensional Integration of RRAM-Based Hybrid Memory Architecture For One-Shot Learning","venue":"Nature Communications","authors":"Yijun Li, Jianshi Tang, Bin Gao, Jian Yao, Anjunyi Fan, **Bonan Yan**, Yuchao Yang, Yue Xi, Yuankun Li, Jiaming Li, Wen Sun, Yiwei Du, Zhengwu Liu, Qingtian Zhang, Song Qiu, Qingwen Li, He Qian, Huaqiang Wu","link":"https://www.nature.com/articles/s41467-023-42981-1"},{"tag":"TCAD","title":"DDC-PIM: Efficient Algorithm/Architecture Co-design for Doubling Data Capacity of SRAM-Based Processing-In-Memory","venue":"IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems","authors":"Cenlin Duan, Jianlei Yang, Xiaolin He, Yingjie Qi, Yikun Wang, Yiou Wang, Ziyan He, **Bonan Yan**, Xueyan Wang, Xiaotao Jia, Weitao Pan, Weisheng Zhao","link":"https://ieeexplore.ieee.org/abstract/document/10311397/"},{"tag":"DATE","title":"STAR: An Efficient Softmax Engine For Attention Model With RRAM Crossbar","venue":"2023 Design, Automation & Test in Europe Conference & Exhibition (DATE)","authors":"Yifeng Zhai, Bing Li, **Bonan Yan**, Jing Wang","link":"https://ieeexplore.ieee.org/abstract/document/10137271/"},{"tag":"FPGA","title":"Accelerating Neural-Ode Inference on Fpgas With Two-Stage Structured Pruning And History-Based Stepsize Search","venue":"2023 ACM/SIGDA International Symposium on Field Programmable Gate Arrays","authors":"Lei Cai, Jing Wang, Lianfeng Yu, **Bonan Yan**, Yaoyu Tao, Yuchao Yang","link":"https://dl.acm.org/doi/abs/10.1145/3543622.3573044"},{"tag":"Advanced Functional Materials","title":"Neural Architecture Search With In‐Memory Multiply–Accumulate and In‐Memory Rank Based on Coating Layer Optimized C‐Doped Ge$_2$Sb$_2$Te$_5$ Phase Change Memory","venue":"Advanced Functional Materials","authors":"Anjunyi Fan, Yihan Fu, Yaoyu Tao, Zhonghua Jin, Haiyue Han, Huiyu Liu, Yaojun Zhang, **Bonan Yan**, Yuchao Yang, Ru Huang","link":"https://onlinelibrary.wiley.com/doi/abs/10.1002/adfm.202300458"},{"tag":"ISSCC","title":"A 1.041-Mb/mm2 27.38-TOPS/W Signed-INT8 Dynamic-Logic-Based ADC-less SRAM Compute-in-Memory Macro in 28nm With Reconfigurable Bitwise Operation For AI and Embedded Applications","venue":"IEEE International Solid-State Circuits Conference (ISSCC)","authors":"**Bonan Yan**, Jeng-Long Hsu, Pang-Cheng Yu, Chia-Chi Lee, Yaojun Zhang, Wenshuo Yue, Guoqiang Mei, Yuchao Yang, Yue Yang, Hai Li, Yiran Chen, Ru Huang","link":"https://ieeexplore.ieee.org/abstract/document/9731545"},{"tag":"ASP-DAC","title":"Heterogeneous Memory Architecture Accommodating Processing-in-Memory on SoC for AIoT Applications","venue":"Asia and South Pacific Design Automation Conference (ASP-DAC)","authors":"Kangyi Qiu, Yaojun Zhang, **Bonan Yan**, Ru Huang","link":"https://ieeexplore.ieee.org/abstract/document/9712544"},{"tag":"A-SSCC","title":"A 28nm 57.6TOPS/W Attention-Based NN Processor With Correlative Computing-In-Memory Ring And Dataflow-Reshaped Digital-Assisted Computing-in-Memory Array","venue":"2022 IEEE Asian Solid-State Circuits Conference (A-SSCC)","authors":"Ruiqi Guo, Zhiheng Yue, Hao Li, Te Hu, Yabing Wang, Hao Sun, Jeng-Long Hsu, Yaojun Zhang, **Bonan Yan**, Leibo Liu, Ru Huang, Shaojun Wei, Shouyi Yin","link":"https://ieeexplore.ieee.org/abstract/document/9980780"},{"tag":"DAC","title":"ASTERS: Adaptable Threshold Spike-Timing Neuromorphic Design With Twin-Column ReRAM Synapses","venue":"Design Automation Conference (DAC)","authors":"Ziru Li, Qilin Zheng, **Bonan Yan**, Ru Huang, Bing Li, Yiran Chen","link":"https://dl.acm.org/doi/abs/10.1145/3489517.3530591"},{"tag":"TCAS-I","title":"VSDCA: A Voltage Sensing Differential Column Architecture Based on 1T2R RRAM Array For Computing-in-Memory Accelerators","venue":"IEEE Transactions on Circuits and Systems I: Regular Papers","authors":"Zhaokun Jing, **Bonan Yan**, Yuchao Yang, Ru Huang","link":"https://ieeexplore.ieee.org/document/9810513"},{"tag":"EDL","title":"1-HEMT-1-Memristor With Hardware Encryptor For Privacy-Preserving Image Processing","venue":"IEEE Electron Device Letters","authors":"Bingjie Dang, Ling Lv, Hong Wang, Lei Cai, **Bonan Yan**, Keqin Liu, Liying Xu, Yue Hao, Ru Huang, Yuchao Yang","link":"https://ieeexplore.ieee.org/document/9795319"},{"tag":"Advanced Materials","title":"In‐Memory Realization of Eligibility Traces Based on Conductance Drift of Phase Change Memory for Energy-Efficient Reinforcement Learning","venue":"Advanced Materials","authors":"Yingming Lu, Xi Li, **Bonan Yan**, Longhao Yan, Teng Zhang, Zhitang Song, Ru Huang, Yuchao Yang","link":"https://onlinelibrary.wiley.com/doi/abs/10.1002/adma.202107811"},{"tag":"NCE","title":"Memristive devices based hardware for unlabeled data processing","venue":"Neuromorphic Computing and Engineering","authors":"Zhuojian Xiao, **Bonan Yan**, Teng Zhang, Ru Huang, Yuchao Yang","link":"https://iopscience.iop.org/article/10.1088/2634-4386/ac734a/meta"},{"tag":"IEDM","title":"Uncertainty Quantification Based on Multilevel Conductance And Stochasticity of Heater Size Dependent C-doped Ge2Sb2Te5 PCM Chip","venue":"IEEE International Electron Devices Meeting (IEDM)","authors":"Longhao Yan, Xi Li, Yihang Zhu, **Bonan Yan**, Yingming Lu, Teng Zhang, Yuchao Yang, Zhitang Song, Ru Huang","link":"https://ieeexplore.ieee.org/abstract/document/9720555"},{"tag":"ICCAD","title":"ReTransformer: ReRAM-Based Processing-In-Memory Architecture For Transformer Acceleration","venue":"International Conference on Computer-Aided Design (ICCAD)","authors":"Xiaoxuan Yang, **Bonan Yan**, Hai Li, Yiran Chen","link":"https://ieeexplore.ieee.org/document/9256523"},{"tag":"VLSI-TSA","title":"Neuromorphic Computing Systems with Emerging Nonvolatile Memories: A Circuits and Systems Perspective","venue":"International Symposium on VLSI Technology, Systems and Applications (VLSI-TSA)","authors":"**Bonan Yan**, Ziru Li, Brady Taylor, Hai Li, Yiran Chen","link":""},{"tag":"DAC","title":"Lattice: an ADC/DAC-less ReRAM-based Processing-In-Memory Architecture For Accelerating Deep Convolution Neural Networks","venue":"Design Automation Conference (DAC)","authors":"Qilin Zheng, Zongwei Wang, Zishun Feng, **Bonan Yan**, Yimao Cai, Ru Huang, Yiran Chen, Chia-Lin Yang, Hai Helen Li","link":""},{"tag":"DAC","title":"Resipe: ReRAM-Based Single-Spiking Processing-In-Memory Engine","venue":"Design Automation Conference (DAC)","authors":"Ziru Li, **Bonan Yan**, Hai Li","link":""},{"tag":"SPIE","title":"Highly Efficient Neuromorphic Computing Systems With Emerging Nonvolatile Memories","venue":"SPIE Novel Patterning Technologies for Semiconductors, MEMS/NEMS and MOEMS","authors":"Brady Taylor, Ziru Li, **Bonan Yan**, Hai Li, Yiran Chen","link":""},{"tag":"IEDM","title":"On Designing Low-Power And Reliable Nonvolatile Memory-based Computing-In-Memory Accelerators","venue":"IEEE International Electron Devices Meeting (IEDM)","authors":"**Bonan Yan**, Mengyun Liu, Yiran Chen, Krishnendu Chakarabarty and Hai Li","link":""},{"tag":"VLSI","title":"RRAM-based Spiking Nonvolatile Computing-In-Memory Processing Engine with Precision-Configurable In Situ Nonlinear Activation","venue":"IEEE Symposium on VLSI Technologies","authors":"**Bonan Yan**, Qing Yang, Wei-Hao Chen, Kung-Tang Chang, Jian-Wei Su, Chien-Hua Hsu, Sih-Han Li, Heng-Yuan Lee, Shyh-Shyuan Sheu, Mon-Shu Ho, Qing Wu, Meng-Fan Chang, Yiran Chen and Hai Li","link":""},{"tag":"ITC","title":"Hardware Fault Tolerance for Binary RRAM Crossbars","venue":"IEEE International Test Conference (ITC)","authors":"Arjun Chaudhuri, **Bonan Yan**, Yiran Chen and Krishnendu Chakrabarty","link":""},{"tag":"Advanced Intelligent Systems","title":"RRAM Based In-Memory Computing: From Device and Large-Scale Integration System Perspectives","venue":"Advanced Intelligent Systems","authors":"**Bonan Yan**, Bing Li, Ximing Qiao, Cheng-Xin Xue, Meng-Fan Chang, Yiran Chen and Hai Li","link":""},{"tag":"GLSVLSI","title":"An overview of in-memory processing with emerging non-volatile memory for data-intensive applications","venue":"Great Lakes Symposium on VLSI","authors":"Bing Li, **Bonan Yan**, and Hai Li","link":""},{"tag":"ASP-DAC","title":"Build reliable and efficient neuromorphic design with memristor technology","venue":"Asia and South Pacific Design Automation Conference (ASP-DAC)","authors":"Bing Li, **Bonan Yan**, Chenchen Liu, and Hai Li","link":""},{"tag":"DAC","title":"A neuromorphic design using chaotic Mott memristor with relaxation oscillation","venue":"Design Automation Conference (DAC)","authors":"**Bonan Yan**, Xiong Cao, and Hai Li","link":""},{"tag":"DATE","title":"Exploring the opportunity of implementing neuromorphic computing systems with spintronic devices","venue":"Design, Automation & Test in Europe Conference (DATE)","authors":"**Bonan Yan**, Fan Chen, Yaojun Zhang, Chang Song, Hai Li, and Yiran Chen","link":""},{"tag":"SCIS","title":"Challenges of memristor based neuromorphic computing system","venue":"Science China Information Sciences (SCIS)","authors":"**Bonan Yan**, Yiran Chen, and Hai Li","link":""},{"tag":"IEDM","title":"Understanding the trade-offs of device, circuit and application in ReRAM-based neuromorphic computing systems","venue":"IEEE International Electron Devices Meeting (IEDM)","authors":"**Bonan Yan**, Chenchen Liu, Xiaoxiao Liu, Yiran Chen, and Hai Li","link":""},{"tag":"ASP-DAC","title":"Low-power neuromorphic speech recognition engine with coarse-grain sparsity","venue":"Asia and South Pacific Design Automation Conference (ASP-DAC)","authors":"Shihui Yin, Deepak Kadetotad, **Bonan Yan**, Chang Song, Yiran Chen, Chaitali Chakrabarti, and Jae-sun Seo","link":""},{"tag":"ICCAD","title":"A closed-loop design to enhance weight stability of memristor based neural network chips","venue":"International Conference on Computer-Aided Design (ICCAD)","authors":"**Bonan Yan**, Jianhua Yang, Qing Wu, Yiran Chen, and Hai Li","link":""},{"tag":"TCAD","title":"Persistent and Non-Persistent Error Optimization for STT-RAM Cell Design","venue":"IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)","authors":"Yaojun Zhang, **Bonan Yan**, Xiaobin Wang, and Yiran Chen","link":""},{"tag":"ISCAS","title":"A neuromorphic ASIC design using one-selector-one-memristor crossbar","venue":"IEEE International Symposium on Circuits and Systems (ISCAS)","authors":"**Bonan Yan**, Amr Mahmoud Mahmoud, Jianhua Joshua Yang, Qing Wu, Yiran Chen, and Hai Li","link":""},{"tag":"NVMTS","title":"RAM and TCAM designs by using STT-MRAM","venue":"Non-Volatile Memory Technology Symposium (NVMTS)","authors":"**Bonan Yan**, Zheng Li, Yiran Chen, and Hai Li","link":""},{"tag":"ISVLSI","title":"A Memristor Crossbar Based Computing Engine Optimized for High Speed and Accuracy","venue":"IEEE Computer Society Annual Symposium on VLSI (ISVLSI)","authors":"Chenchen Liu, Qing Yang, **Bonan Yan**, Jianlei Yang, Xiaocong Du, Weijie Zhu, Hao Jiang, Qing Wu, Mark Barnell, and Hai Li","link":""},{"tag":"Integration","title":"Giant Spin-Hall assisted STT-RAM and logic design","venue":"Integration","authors":"Enes Ekens, Ismail Bayram, Yaojun Zhang, **Bonan Yan**, Wenqing Wu, Hai Li, and Yiran Chen","link":""},{"tag":"ASICON","title":"Recent progresses of STT memory design and applications","venue":"IEEE 11th International Conference on ASIC (ASICON)","authors":"**Bonan Yan**, Yaojun Zhang, Enes Eken, Wujie Wen, Weisheng Zhao, and Yiran Chen","link":""},{"tag":"VLSI-SoC","title":"An overview on memristor crossbar based neuromorphic circuit and architecture","venue":"IFIP/IEEE International Conference on Very Large Scale Integration (VLSI-SoC)","authors":"Zheng Li, Chenchen Liu, Yandan Wang, **Bonan Yan**, Chaofei Yang, Jianlei Yang, and Hai Li","link":""},{"tag":"GLSVLSI","title":"A High-Speed Robust NVM-TCAM Design Using Body Bias Feedback","venue":"Great Lakes Symposium on VLSI (GLVLSI)","authors":"**Bonan Yan**, Zheng Li, Yaojun Zhang, Jianlei Yang, Hai Li, Weisheng Zhao, and Pierre Chor-Fung Chia","link":""},{"tag":"DAC","title":"A spiking neuromorphic design with resistive crossbar","venue":"Design Automation Conference (DAC)","authors":"Chenchen Liu, **Bonan Yan**, Chaofei Yang, Linghao Song, Zheng Li, Beiye Liu, Yiran Chen, Hai Li, Qing Wu, and Hao Jiang","link":""},{"tag":"DATE","title":"Giant spin hall effect (GSHE) logic design for low power application","venue":"Design Automation & Test in Europe Conference & Exhibition (DATE)","authors":"Yaojun Zhang, **Bonan Yan**, Wenqing Wu, Hai Li, and Yiran Chen","link":""},{"tag":"T-ED","title":"Compact model of subvolume MTJ and its design application at nanoscale technology nodes","venue":"IEEE Transactions on Electron Devices (T-ED)","authors":"Yue Zhang, **Bonan Yan**, Wang Kang, Yuanqing Cheng, Jacques-Olivier Klein, Youguang Zhang, Yiran Chen, and Weisheng Zhao","link":""}];
+const PORTRAIT = "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";
 
-const targetId = this.getAttribute('href');
-const targetElement = document.querySelector(targetId);
+const JRN = new Set(["Nature","Nature Communications","Nature Electronics","TCAD","TCAS-I","SCIS","NCE",
+  "JSSC","EDL","T-ED","Advanced Science","Adv. Funct. Mater.","Advanced Functional Materials",
+  "Advanced Materials","Advanced Intelligent Systems","Integration"]);
 
-if (targetElement) {
-window.scrollTo({
-top: targetElement.offsetTop - 80, // Adjust for navbar height
-behavior: 'smooth'
-});
+const RM = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $  = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>Array.prototype.slice.call(r.querySelectorAll(s));
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+
+/* ---- portrait: base64, COLOUR, untouched ---- */
+(function(){
+  const img = $("#portrait");
+  if(img && PORTRAIT && PORTRAIT.indexOf("__PORTRAIT") === -1){
+    img.src = "data:image/jpeg;base64," + PORTRAIT;
+  }
+})();
+
+/* ---- authors: ** ** = Bonan Yan, trailing * = corresponding author ---- */
+function fmtA(s){
+  return esc(s)
+    .replace(/\*\*([^*]+)\*\*/g,'<b class="me">$1</b>')
+    .replace(/\*/g,'<sup class="ca" title="corresponding author">*</sup>');
 }
-});
-});
 
-// Highlight active nav link based on scroll position
-window.addEventListener('scroll', function() {
-const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('.nav-link');
+/* ---- module navigation (die floorplan bond pads) ---- */
+const MODS = [
+  ["U1","About"],["U2","Research"],["U3","Education"],["U4","Work"],["U5","Awards"],
+  ["U6","Teaching"],["U7","Publications"],["U8","Software"],["U9","Hints"],
+  ["U10","Group"],["U11","Advice"],["U12","Contact"]
+];
+(function nav(){
+  const pads = $("#pads");
+  pads.innerHTML = MODS.map(m=>'<button type="button" class="pad" data-t="'+m[0]+'" aria-current="false">'
+    +'<i>'+m[0]+'</i>'+m[1]+'</button>').join("");
+  $("#footNav").innerHTML = MODS.map(m=>'<li><a href="#'+m[0]+'" style="color:var(--paper);text-decoration:none;'
+    +'border-bottom:2px solid var(--blue)">'+m[0]+' · '+m[1]+'</a></li>').join("");
+})();
 
-let current = '';
-
-sections.forEach(section => {
-const sectionTop = section.offsetTop;
-const sectionHeight = section.clientHeight;
-
-if (pageYOffset >= (sectionTop - 100)) {
-current = section.getAttribute('id');
+/* module jumps: compute an offset against the sticky pad row (never the scroll-into-view API) */
+function hdrH(){ const h=$("#hdr"); return h ? h.getBoundingClientRect().height : 0; }
+function goTo(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const y = el.getBoundingClientRect().top + window.pageYOffset - hdrH() - 14;
+  window.scrollTo({ top: Math.max(0,y), behavior: RM ? "auto" : "smooth" });
 }
+document.addEventListener("click", e=>{
+  const pad = e.target.closest(".pad");
+  if(pad){ goTo(pad.dataset.t); return; }
+  const skip = e.target.closest(".skip");
+  if(skip){
+    e.preventDefault();
+    const main = document.getElementById("main");
+    goTo("main");
+    if(main){ main.focus({ preventScroll:true }); }
+    return;
+  }
+  const fa = e.target.closest("#footNav a, a[href^='#U']");
+  if(fa){
+    const id = (fa.getAttribute("href")||"").replace("#","");
+    if(id && document.getElementById(id)){ e.preventDefault(); goTo(id); }
+  }
 });
 
-navLinks.forEach(link => {
-link.classList.remove('active');
+/* ---- research-direction ticker (verbatim Research Interests; venues stay as publication wordlines) ---- */
+(function ticker(){
+  const DIRS = [
+    "Processing-In-Memory Circuits and Systems","Circuit Design","Domain-Specific/General Architecture","SRAM","RRAM","PCM","MRAM",
+    "Artificial General Intelligent (AGI) Processors","Perception","Reasoning","Cognition","Massive Multi-Agents Reinforcement Learning",
+    "Deep Learning","LLM","Computer Vision","Probabilitic Computing"
+  ];
+  const one = DIRS.map(t=>'<span>'+esc(t)+'</span>').join("");
+  $("#tickRow").innerHTML = one + one;
+  const seen = [];
+  PUBS.forEach(p=>{ if(seen.indexOf(p.tag) === -1) seen.push(p.tag); });
+  $("#wlN").textContent = seen.length;
+})();
+
+/* ---- publications: bitcell wordline array + card feed ---- */
+const FLIP = ["f-v","f-a","f-m"];
+const state = { kind:"all", tag:null };
+
+(function renderFeed(){
+  const feed = $("#feed");
+  feed.innerHTML = PUBS.map((p,i)=>{
+    const j = JRN.has(p.tag);
+    return '<article class="pcell '+FLIP[i%3]+'" data-j="'+(j?"1":"0")+'" data-tag="'+esc(p.tag)+'" style="--cd:'+((i%6)*26)+'ms">'
+      + '<header class="pc-hd">'
+      +   '<span class="pc-id">P'+String(i+1).padStart(2,"0")+'</span>'
+      +   '<span class="pc-venue">['+esc(p.tag)+']</span>'
+      +   '<span class="pc-kind">'+(j?"Journal":"Conference")+'</span>'
+      + '</header>'
+      + '<h3 class="pc-t">'+esc(p.title)+'</h3>'
+      + '<p class="pc-a">'+fmtA(p.authors)+'</p>'
+      + '<p class="pc-v">'+esc(p.venue)+'</p>'
+      + '<div class="pc-ft">'
+      +   (p.link
+            ? '<a class="pc-link" href="'+esc(p.link)+'" target="_blank" rel="noopener noreferrer">DOI <span aria-hidden="true">&#8599;</span></a>'
+            : '<span class="pc-nolink">No link</span>')
+      + '</div>'
+      + '</article>';
+  }).join("");
+})();
+
+(function renderWordlines(){
+  const order = [], counts = Object.create(null);
+  PUBS.forEach(p=>{ if(!(p.tag in counts)){ counts[p.tag]=0; order.push(p.tag); } counts[p.tag]++; });
+  $("#wlGrid").innerHTML = order.map(t=>
+    '<button type="button" class="wl" data-tag="'+esc(t)+'" aria-pressed="false" title="'+esc(t)+' — '+counts[t]+' of 61">'
+    + '<b>'+esc(t)+'</b><em>'+String(counts[t]).padStart(2,"0")+' · '+(JRN.has(t)?"JRN":"CONF")+'</em></button>').join("");
+  const nj = PUBS.filter(p=>JRN.has(p.tag)).length;
+  $("#cAll").textContent = PUBS.length;
+  $("#cJ").textContent = nj;
+  $("#cC").textContent = PUBS.length - nj;
+})();
+
+/* filtering only toggles visibility — all 61 titles + author strings stay in the DOM */
+function applyFilter(){
+  let n = 0;
+  $$("#feed .pcell").forEach(c=>{
+    const okKind = state.kind === "all" || (state.kind === "j") === (c.dataset.j === "1");
+    const okTag  = !state.tag || c.dataset.tag === state.tag;
+    const on = okKind && okTag;
+    c.classList.toggle("off", !on);
+    if(on) n++;
+  });
+  $("#nShow").textContent = n;
+  const lbl = (state.tag ? "["+state.tag+"]" : "all") + " · " +
+              (state.kind === "all" ? "everything" : state.kind === "j" ? "journals" : "conferences");
+  $("#roState").textContent = "Wordline: " + lbl;
+  $("#wlSel").textContent = state.tag ? "["+state.tag+"]" : "— ALL —";
+  $("#padLive").textContent = "ARRAY " + n + "/" + PUBS.length;
+  $("#feedEnd").textContent = n === 0
+    ? "No cell matches this wordline — press Reset array"
+    : "End of array · " + n + " of " + PUBS.length + " cells shown · all 61 titles & author lists present in the DOM";
+  $$(".wl").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.tag === state.tag)));
+  $$(".kind[data-kind]").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.kind === state.kind)));
+}
+$("#wlGrid").addEventListener("click", e=>{
+  const b = e.target.closest(".wl"); if(!b) return;
+  state.tag = (state.tag === b.dataset.tag) ? null : b.dataset.tag;
+  applyFilter();
+});
+$$(".kind[data-kind]").forEach(b=>b.addEventListener("click", ()=>{
+  state.kind = b.dataset.kind; applyFilter();
+}));
+$("#resetBtn").addEventListener("click", ()=>{ state.kind = "all"; state.tag = null; applyFilter(); });
+applyFilter();
+
+/* ---- contact: in-memory compute readout ---- */
+(function cim(){
+  const PARTS = ["bonanyan","@","pku",".","edu",".","cn"];
+  const EMAIL = PARTS.join("");
+  const btn = $("#mailBtn"), copy = $("#copyBtn"), reg = $("#mailReg"), val = $("#mailVal"), st = $("#cimState");
+  function reveal(){ val.textContent = EMAIL; reg.classList.add("done"); }
+  btn.addEventListener("click", ()=>{ reveal(); st.textContent = "COMPUTED \u00B7 result written in place"; });
+  copy.addEventListener("click", ()=>{
+    reveal();
+    const ok = ()=>{
+      copy.textContent = "Copied"; st.textContent = "COPIED TO CLIPBOARD";
+      window.setTimeout(()=>{ copy.textContent = "Copy email"; }, 2200);
+    };
+    const fail = ()=>{ st.textContent = "SELECT THE REGISTER + COPY MANUALLY"; };
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(EMAIL).then(ok).catch(fail); }
+      else { fail(); }
+    }catch(err){ fail(); }
+  });
+})();
+
+/* ---- one orchestrated load reveal ---- */
+requestAnimationFrame(()=>{ document.documentElement.classList.add("ready"); });
+
+/* ---- restrained scroll reveals (rAF sweep: also survives instant jumps) ---- */
+if(RM){
+  $$(".rv").forEach(el=>el.classList.add("in"));
+  $$(".an").forEach(el=>el.classList.add("in"));
+} else {
+  let rvPend = $$(".rv"), ticking = false;
+  const sweep = ()=>{
+    ticking = false;
+    const vh = window.innerHeight;
+    rvPend = rvPend.filter(el=>{
+      if(el.getBoundingClientRect().top < vh - 24){ el.classList.add("in"); return false; }
+      return true;
+    });
+  };
+  const onScroll = ()=>{ if(!ticking){ ticking = true; requestAnimationFrame(sweep); } };
+  window.addEventListener("scroll", onScroll, {passive:true});
+  window.addEventListener("resize", onScroll);
+  sweep();
+
+  const act = new IntersectionObserver(es=>{
+    es.forEach(en=>{
+      if(!en.isIntersecting) return;
+      const id = en.target.id;
+      $$(".pad").forEach(p=>p.setAttribute("aria-current", String(p.dataset.t === id)));
+    });
+  },{ rootMargin:"-30% 0px -60% 0px" });
+  MODS.forEach(m=>{ const el = document.getElementById(m[0]); if(el) act.observe(el); });
+}
+</script>
+<!-- Built from design-demos/d8-verge-neobrutalism.html (The Verge 2022 neo-brutalism) · final polish pass 2026-10-01 · content source: bonany.cc (index / cv / pub / works / group) fetched 2026-09-30. -->
+</body>
+</html>
